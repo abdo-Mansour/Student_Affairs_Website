@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Student Affairs</title>
+    </head>
+    <body>
+        <header>
+            <h1>Student Affairs</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="">Home page</a></li>
+                <li><a href="add_student.html">Add student</a></li>
+                <li><a href="Search_Student.html">Search & edit</a></li>
+                <li><a href="html/all_students.html">View all</a></li>
+                <li><a href="">Help</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <p>Search by: </p>
+        <div>
+            <label for="name">Name: </label>
+            <input 
+                id = "name" 
+                type="text" 
+                name = "name"
+                value="Student fullname"
+                required>
+        </div>
+        <br>
+        <input type="submit" value="Search">
+        <hr>
+        <table border="1" cellpadding = "4">
+            <caption>Students</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Select</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="select1">20210353</label></td>
+                    <td><label for="select1">Mohamed Mohsen Shokry</label></td>
+                    <td>
+                        <input id="select1" type="radio" name="selected_student">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="select2">20210557</label></td>
+                    <td><label for="select2">Mohamed Mohsen Ahmed</label></td>
+                    <td>
+                        <input id="select2" type="radio" name="selected_student">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <ul>
+            <li><a href="Edit_Student.html">Edit student</a></li>
+            <br>
+            <li> <a href="">Department</a></li>
+            <br>
+            <li><a href="">View info</a></li>
+        </ul>
+    </body>
+</html>
