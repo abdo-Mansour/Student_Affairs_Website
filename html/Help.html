@@ -7,42 +7,23 @@
     <title>Help</title>
 </head>
 <body>
-    <header style="display:flex;justify-content:space-between;padding:20px;">
-        <div class="logo" style="line-height:3.7;">Home Page</div>
-        <div class="navbar">
-            <ul style="list-style: none;
-            display: flex;
-            width: 331px;
-            justify-content: space-between;">
-                <li>
-                    <a href="" style="text-decoration:none;">
-                        <i></i>
-                        <span>Add Student</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="" style="text-decoration:none;">
-                        <i></i>
-                        <span>View All Student</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="Help.html" style="text-decoration:none;">
-                        <i></i>
-                        <span>Help</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="" style="text-decoration:none;">
-                        <i></i>
-                        <span>Search</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <header>
+        <h1>Student Affairs</h1>
     </header>
+    <hr>
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="HomePage.html">Home page</a></li>
+            <li><a href="add_student.html">Add student</a></li>
+            <li><a href="Search_Student.html">Search & edit</a></li>
+            <li><a href="all_students.html">View all students</a></li>
+            <li><a href="Help.html">Help</a></li>
+        </ul>
+    </nav>
+    <hr>
     <div class="search"style="padding:20px;" >
-        <h1>Search</h1>
+        <h2>Search</h2>
         <p style="font-size:20px;font-weight:bold;">
             in this page you can search about an active student by name 
             and then you can know the information of this student
@@ -50,23 +31,30 @@
              but you can not edit 
             department of this student or you can add department if the student in the third year
         </p>
-        <a href="">Search</a>
+        <a href="Search_Student.html">Search</a>
     </div>
     <div class="view-std" style="padding:20px;">
-        <h1>View Student</h1>
+        <h2>View All Student</h2>
         <p style="font-size:20px;font-weight:bold;">
             you can see in this page all active students and inactive student 
         </p>
-        <a href="">View Studetns</a>
+        <a href="all_students.html">View All Studetns</a>
     </div>
     <div class="add-std" style="padding:20px;">
-        <h1>Add Student</h1>
+        <h2>Add Student</h2>
         <p style="font-size:20px;font-weight:bold;">
             you can add a new student in this page with student information 
             : id, name, date of birth, GPA, gender, level,
             status if student active or not, department, email and mobile number
         </p>
-        <a href="">Add New Student</a>
+        <a href="add_student.html">Add New Student</a>
     </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <center>
+            <p>FCAI 2023 &copy;</p>
+        </center>
+    </footer>
 </body>
 </html>
