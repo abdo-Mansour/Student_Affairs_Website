@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help</title>
+    <title>Student Affairs</title>
+
+    <script src="https://kit.fontawesome.com/ddfd70be7f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="stylesheets/help.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,73 +18,32 @@
     <div class="title">Student Affairs</div>
     <header>
         <ul>
-            <a href="#">Home</a>
-            <a href="#">Add Student</a>
-            <a href="#">All Students</a>
-            <a href="#">Search</a>
-            <a href="#">Help</a>
+            <a href="index.html">Home</a>
+            <a href="add_student.html">Add Student</a>
+            <a href="view_student.html">All Students</a>
+            <a href="search_student.html">Search</a>
+            <a href="help.html">Help</a>
         </ul>
     </header>
+
     <div class="container">
-        <ul class="tit">
-            <li>
-                <div>
-                    <p>How to Add New Student?</p>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <div>HelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelpHelp</div>
-            </li>
-            <li>
-                <div>
-                    <p>How to Change the Status of Students?</p>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <div>hazem ahmed</div>
-            </li>
-            <li>
-                <div>
-                    <p>How to Edit Student Data ? </p>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <div>hazem ahmed</div>
-            </li>
-            <li>
-                <div>
-                    <p>How to Add Department ? </p>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <div>hazem ahmed
-                    <ul class="describ">
-                        <li>a</li>
-                        <li>d</li>
-                        <li>f</li>
-                        <li>vf</li>
-                        <li>fv</li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
+        <!--create a collapsable questions-->
+        <div class="question">
+        
+            <button type = "button" class="collapsible-btn question_title">How to add a student?
+            <i class="fa-solid fa-caret-up fa-rotate-180"></i>
+            <i class="fa-solid fa-caret-up fa-rotate-90"></i>
+            </button>
+        
+            <div class="question_content">
+                <p>BRUH IMAGINE BEING SO STUPID AND DUMB THAT YOU CAN'T ADD A STUDENT
+                    <br> JUST GO TO THE ADD STUDENT PAGE AND FILL THE FORM
+                    <br> IT'S THAT SIMPLE
+                </p>
+            </div>
+        </div>
     </div>
     <footer>FCAI 2023 ©</footer>
-    <script>
-        let chevron = document.querySelectorAll(".container i");
-        let divs = document.querySelectorAll(".container ul li div");
-        chevron.forEach((e) => {
-            e.addEventListener("click", (event) => {
-                chevron.forEach((element) => {
-                    element.classList = "fa-solid fa-chevron-right"
-                })
-                event.target.classList = "fa-solid fa-chevron-down";
-                divs.forEach((ele) => {
-                    ele.classList.remove("active")
-                })
-                let a = event.target.parentNode;
-                a.classList.add("active");
-                let activeClasses = document.querySelector(`.fa-solid.fa-chevron-down`)
-            })
-        })
-    </script>
-
 </body>
 
 </html>

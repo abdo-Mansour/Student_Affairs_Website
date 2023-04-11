@@ -46,63 +46,29 @@ header>ul a {
     justify-content: center;
 }
 
-.container>ul {
-    border: 2px solid #284160;
-    border-radius: 5px;
-    width: 87%;
-    list-style: none;
-}
-
-.container>ul li {
-    padding: 10px;
-}
-
-.container>ul li div~div {
-    display: none;
-}
-
-.container>ul li>p,
-.container ul li div~div {
-    width: 90%;
-    word-break: break-all;
-}
-
-.container>ul li i {
-    margin-left: auto;
-}
-
-.container>ul li:not(:last-child) {
-    border-bottom: 2px solid #284160;
-}
-
-.container>ul li div {
-    display: flex;
-    position: relative;
-    align-items: center;
-}
-
-.container .tit>li div:not(:last-child):before {
-    content: "";
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: #A7A7A7;
-    position: absolute;
-}
-/* ////////////////////// */
-
-.container ul li div p {
-    margin-left: 10px;
-}
-/* ///////////////////// */
-
 .active~div {
     display: block !important;
 }
 
-.describ {
-    list-style: decimal;
-    padding-left: 15px;
+.question_content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+.collapsible-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size:  20px;
+}
+.active, .collapsible-btn:hover {
+    background-color: #e7e6e6;
 }
 
 footer {

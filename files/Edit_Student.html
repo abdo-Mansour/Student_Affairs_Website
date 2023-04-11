@@ -1,111 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Student</title>
-    <meta name="description" content="Edit" />
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0%;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-family: 'Nunito', sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .title {
+            padding: 20px;
+            background-color: #284160;
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        header {
+            background-color: #FC7716;
+        }
+        
+        header>ul {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: auto;
+            list-style: none;
+            padding: 20px;
+        }
+        
+        header>ul a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 50px 0px;
+            width: 90%;
+            margin: auto;
+            flex-grow: 1;
+        }
+        
+        form div {
+            padding-right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 29px;
+        }
+        
+        form .quar input,
+        form .fifty input {
+            outline: none;
+            background-color: #eee;
+            border: none;
+            padding: 10px;
+            float: right;
+        }
+        
+        button {
+            display: block;
+            border: none;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            background-color: #FC7716;
+            border-radius: 12px;
+            margin: auto;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+        
+        footer {
+            background-color: #284160;
+            padding: 40px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: 1025px) {
+            /* Styles for computers or larger screens */
+            form .quar input {
+                width: 50%;
+            }
+            form .fifty input {
+                width: 76%;
+            }
+            form .quar {
+                width: 25%;
+            }
+            form .fifty {
+                width: 50%;
+            }
+        }
+        
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            /* Styles for tablets in portrait orientation */
+            form div {
+                width: 50%;
+            }
+            form div input {
+                width: 65%;
+            }
+        }
+        
+        @media only screen and (max-device-width: 767px) {
+            /* Styles for phones in portrait orientation */
+            form div {
+                width: 100%;
+            }
+            form div input {
+                width: 65%;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="title">Student Affairs</div>
     <header>
-        <h1>Student Affairs</h1>
-    </header>
-    <hr>
-    <!-- Navigation bar -->
-    <nav>
         <ul>
-            <li><a href="index.html">Home page</a></li>
-            <li><a href="add_student.html">Add student</a></li>
-            <li><a href="Search_Student.html">Search & edit</a></li>
-            <li><a href="all_students.html">View all students</a></li>
-            <li><a href="Help.html">Help</a></li>
+            <a href="index.html">Home</a>
+            <a href="add_student.html">Add Student</a>
+            <a href="all_students.html">All Students</a>
+            <a href="Search_Student.html">Search</a>
+            <a href="Help.html">Help</a>
         </ul>
-    </nav>
-    <hr>
-    <h2>Edit Student</h2>
-    <h3>You Can Edit Student Data Here</h3>
+    </header>
     <form>
-        <div>
+        <div class="fifty">
             <label for="name">Name</label>
-            <input id="name" type="text" value="Last Value" name="name">
-
+            <input id="name" type="text" required>
         </div>
-
-        <div>
-            <label for="id">ID</label>
-            <input id="id" type="text" value="Last Value" name="id">
-
+        <div class="quar">
+            <label for="Gen">Gender</label>
+            <input id="Gen" type="text" required>
         </div>
-
-        <div>
-            <label for="date">Date of Birth</label>
-            <input id="date" type="date" name="date">
-
+        <div class="quar">
+            <label for="cp">GPA</label>
+            <input id="cp" type="number" required>
         </div>
-
-        <div>
-            <label for="GPA">GPA</label>
-            <input id="GPA" type="text" value="Last Value" name="GPA">
-
+        <div class="fifty">
+            <label for="ID">ID</label>
+            <input id="ID" type="number" required>
         </div>
-
-        <div>
-            <label for="gender">Gender</label>
-            <select name="gender" id="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Prefer Not to say">Prefer Not to say</option>
-            </select>
-
-        </div>
-
-        <div>
+        <div class="quar">
             <label for="level">Level</label>
-            <input id="level" type="number" value="1" name="level" min="1" max="4">
-
+            <input id="level" type="number" max="7" min="1" required>
         </div>
-
-        <div>
-            <label for="status">Status</label>
-            <select name="status" id="status">
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-            </select>
-
+        <div class="quar">
+            <label for="sta">Status</label>
+            <input id="sta" type="text" required>
         </div>
-
-        <div>
+        <div class="fifty">
+            <label for="date">Date Birth</label>
+            <input id="date" type="date" required>
+        </div>
+        <div class="fifty">
             <label for="dep">Department</label>
-            <input id="dep" type="text" value="CS" name="department" disabled>
-
+            <input id="dep" type="text" required>
         </div>
-
-        <div>
+        <div class="fifty">
             <label for="email">Email</label>
-            <input id="email" type="email" value="Mohamed_Mohsen@gmail.com" name="email">
-
+            <input name="email" type="email" required>
         </div>
-
-        <div>
+        <div class="fifty">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" value="+20" name="phone">
+            <input id="phone" type="tel" maxlength="11" minlength="11" required>
+        </div>
+        <button type="submit" id="edit_button">Edit Student</button>
 
-        </div>
-        <div>
-            <input type="submit" value="Submit">
-        </div>
+        
+<!-- This Script redirects to search after viewing student --> 
+        <script type="text/javascript">
+            document.getElementById("edit_button").onclick = function () {
+                location.href = "Search_Student.html";
+            };
+        </script>
+        
     </form>
-    <hr>
-    <!-- Footer -->
-    <footer>
-        <center>
-            <p>FCAI 2023 &copy;</p>
-        </center>
-    </footer>
+    <footer>FCAI 2023 ©</footer>
 </body>
 
-
 </html>
-<!-- Author: Ali Hegazy aka Mr Code -->
