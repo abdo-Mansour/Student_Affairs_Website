@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
+}
+
+.title {
+    padding: 20px;
+    background-color: #284160;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header {
+    background-color: #FC7716;
+}
+
+header>ul {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    list-style: none;
+    padding: 20px;
+}
+
+header>ul a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    height: 90vh;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container>ul {
+    border: 2px solid #284160;
+    border-radius: 5px;
+    width: 87%;
+    list-style: none;
+}
+
+.container>ul li {
+    padding: 10px;
+}
+
+.container>ul li div~div {
+    display: none;
+}
+
+.container>ul li>p,
+.container ul li div~div {
+    width: 90%;
+    word-break: break-all;
+}
+
+.container>ul li i {
+    margin-left: auto;
+}
+
+.container>ul li:not(:last-child) {
+    border-bottom: 2px solid #284160;
+}
+
+.container>ul li div {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.container .tit>li div:not(:last-child):before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #A7A7A7;
+    position: absolute;
+}
+/* ////////////////////// */
+
+.container ul li div p {
+    margin-left: 10px;
+}
+/* ///////////////////// */
+
+.active~div {
+    display: block !important;
+}
+
+.describ {
+    list-style: decimal;
+    padding-left: 15px;
+}
+
+footer {
+    background-color: #284160;
+    padding: 40px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
