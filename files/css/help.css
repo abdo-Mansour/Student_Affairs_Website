@@ -1,0 +1,70 @@
+
+/*this is to style the questions container*/
+#qa-container {
+    width: 70%;
+    margin: auto;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    justify-content: center;
+    box-sizing: border-box;
+
+
+    background: #FFFFFF;
+    border: 2px solid #284160;
+    border-radius: 5px;
+}
+
+/*The answers for the questions*/
+.question_content {
+    display: none;
+    overflow: hidden;
+    margin: 10px;
+    background-color: #ffffff;
+}
+
+/*the answers text styling*/
+.question_content p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/*the style for each question*/
+.question{
+    border: 2px solid #284160;
+}
+
+/*the style for the question text*/
+.collapsible-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size:  23px;
+    font-weight: bold;
+    
+}
+
+/*the style for the answer text when it is active*/
+.active, .collapsible-btn:hover {
+    background-color: #284160;
+    color: #ffffff;
+    
+}
+
+/*ICONS*/
+
+.fa-solid , fa-caret-down{
+    float: right;
+    transform: rotate(0deg);
+}
+
+.active .fa-solid, .active .fa-caret-down{
+    transform: rotate(180deg);
+}
+
+
