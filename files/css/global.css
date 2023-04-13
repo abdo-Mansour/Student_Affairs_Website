@@ -12,16 +12,12 @@ body {
 
 
 .title {
-    padding: 20px;
+    padding: 10px;
     background-color: #284160;
     color: #ffffff;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-}
-
-header {
-    background-color: #FC7716;
 }
 
 header>ul {
@@ -30,7 +26,7 @@ header>ul {
     width: 90%;
     margin: auto;
     list-style: none;
-    padding: 20px;
+    padding: 15px;
 }
 
 header>ul a {
@@ -39,6 +35,25 @@ header>ul a {
     font-size: 20px;
     font-weight: bold;
 }
+
+header {
+    overflow: hidden;
+    background-color: #FC7716;
+}
+
+header a {
+    text-align: center;
+    padding: 7px 7px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+header a:hover, a:active,a.active {
+    background-color: #ffffff;
+    color: #284160;
+    border-radius: 15px;
+}
+
 
 footer {
     background-color: #284160;
