@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Ubuntu';
 }
 
 .title {
@@ -37,13 +37,19 @@ header>ul a {
     font-weight: bold;
 }
 
-.container {
-    height: 90vh;
-    width: 60%;
+
+#qa-container {
+    width: 80%;
     margin: auto;
-    display: flex;
-    align-items: center;
+    margin-top: 7%;
+    margin-bottom: 7%;
     justify-content: center;
+    box-sizing: border-box;
+
+
+    background: #FFFFFF;
+    border: 2px solid #284160;
+    border-radius: 5px;
 }
 
 .active~div {
@@ -51,24 +57,36 @@ header>ul a {
 }
 
 .question_content {
-    padding: 0 18px;
+    
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    margin: 10px;
+    background-color: #ffffff;
+}
+.question_content p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.question{
+    border: 2px solid #284160;
 }
 .collapsible-btn {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     cursor: pointer;
-    padding: 18px;
+    padding: 10px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
     font-size:  20px;
+    font-weight: B;
+    
 }
 .active, .collapsible-btn:hover {
-    background-color: #e7e6e6;
+    background-color: #ececff92;
 }
 
 footer {
