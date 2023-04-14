@@ -1,24 +1,13 @@
 * {
     box-sizing: border-box;
-<<<<<<< HEAD
-    font-family: 'Ubuntu',sans-serif;
-=======
->>>>>>> b86d98281a9ebe6c38f79928ef7ac4bbf12b770b
     padding: 0;
     margin: 0%;
 }
 
 body {
-<<<<<<< HEAD
-    background-color: #284160; 
-}
-
-/* Header */
-=======
     font-family: 'ubuntu';
 }
 
->>>>>>> b86d98281a9ebe6c38f79928ef7ac4bbf12b770b
 #title{
     padding: 20px;
     background-color: #284160;
@@ -28,15 +17,6 @@ body {
     font-weight: 500;
 }
 
-<<<<<<< HEAD
-.buttons{
-
-    width: 24.81%;
-    min-height: 100vh;
-    color: #284160;
-    background-color: #fff;
-    border: 0px;
-=======
 #welcome{
     text-align: center;
     font-size: 40px;
@@ -52,20 +32,12 @@ body {
     background-color: #fff;
     border: 1.6px solid #284160;
     border-radius: 7px;
->>>>>>> b86d98281a9ebe6c38f79928ef7ac4bbf12b770b
     font-size: 30px;
     font-weight: bold;
     text-align: center;
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-
-/* form{
-    text-align: center;
-} */
-
-=======
 form{
     text-align: center;
 }
@@ -97,4 +69,3 @@ footer{
     font-weight: 500;
     padding: 40px;
 }
->>>>>>> b86d98281a9ebe6c38f79928ef7ac4bbf12b770b
