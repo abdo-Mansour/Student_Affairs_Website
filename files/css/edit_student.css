@@ -36,65 +36,40 @@ form {
     flex-wrap: wrap;
     padding: 50px 0px;
     width: 90%;
-    margin: 80px;
+    margin: auto;
     flex-grow: 1;
 }
 
 form div {
     padding-right: 20px;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0px;
+    margin-bottom: 29px;
 }
 
 form .quar input,
-form .fifty input , 
-form .fifty select,
-form .quar select{
+form .fifty input,
+form .quar select {
     outline: none;
     background-color: #eee;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     padding: 10px;
     float: right;
-    
+
 }
 
 .butt {
-    width: 120px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #F9F6F6;
-    border: 1px solid #284160;
-    border-radius: 250px;
-    margin: 10px;
-    margin-top: 90px;
-    cursor: pointer;
-    margin: 0;
-    position: absolute;
-    left: 50%;
-    top: 85%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.butt_back{
     width: 100px;
     padding: 10px;
     font-size: 16px;
     background-color: #F9F6F6;
     border: 1px solid #284160;
     border-radius: 250px;
-    margin: 10px;
-    margin-top: 30px;
+    margin-top: 100px;
+    left: 70%;
     cursor: pointer;
-    margin: 0;
-    position: absolute;
-    top: 85%;
-    left: 41%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
 }
 
 @media only screen and (min-width: 1025px) {
