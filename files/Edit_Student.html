@@ -9,7 +9,7 @@
 
      <!--stylesheets-->
      <link rel="stylesheet" href="css/edit_student.css">
-     <link rel="stylesheet" href="css/global.css" />
+     <link rel="stylesheet" href="css/global.css">
      <!--fonts-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,21 +80,20 @@
             <input id="phone" type="tel" maxlength="11" minlength="11" required>
         </div>
         <div>
-        <button type="submit" id="edit_button" class="butt" style="margin-left: 500px;">Back</button>
+        <button id="edit_button" class="butt" style="margin-left: 500px;">Back</button>
         </div>
         <div>
-            <button id="edit_button" class="butt" style="margin-left: 10px;">Save</button>
+            <button type="submit" id="edit_button" class="butt" style="margin-left: 10px;">Save</button>
         </div>
         
         <!-- This Script redirects to search after viewing student --> 
         <script type="text/javascript">
             document.getElementById("edit_button").onclick = function () {
-                location.href = "Search_Student.html";
+                location.href = "search_student.html";
             };
         </script>
         
     </form>
-    <footer>FCAI 2023 ©</footer>
 </body>
 
 </html>

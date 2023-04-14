@@ -1,143 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Info</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0%;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            font-family: 'Nunito', sans-serif;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        
-        .title {
-            padding: 20px;
-            background-color: #284160;
-            color: #fff;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        
-        header {
-            background-color: #FC7716;
-        }
-        
-        header>ul {
-            display: flex;
-            justify-content: space-between;
-            width: 90%;
-            margin: auto;
-            list-style: none;
-            padding: 20px;
-        }
-        
-        header>ul a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        form {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 50px 0px;
-            width: 90%;
-            margin: auto;
-            flex-grow: 1;
-        }
-        
-        form div {
-            padding-right: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 29px;
-        }
-        
-        form .quar input,
-        form .fifty input {
-            outline: none;
-            background-color: #eee;
-            border: none;
-            padding: 10px;
-            float: right;
-        }
-        
-        button {
-            display: block;
-            border: none;
-            padding: 15px;
-            font-size: 15px;
-            font-weight: bold;
-            color: white;
-            background-color: #FC7716;
-            border-radius: 12px;
-            margin: auto;
-            margin-top: 30px;
-            cursor: pointer;
-        }
-        
-        footer {
-            background-color: #284160;
-            padding: 40px;
-            color: #fff;
-            font-weight: bold;
-            text-align: center;
-            width: 100%;
-        }
-        
-        @media only screen and (min-width: 1025px) {
-            /* Styles for computers or larger screens */
-            form .quar input {
-                width: 50%;
-            }
-            form .fifty input {
-                width: 76%;
-            }
-            form .quar {
-                width: 25%;
-            }
-            form .fifty {
-                width: 50%;
-            }
-        }
-        
-        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-            /* Styles for tablets in portrait orientation */
-            form div {
-                width: 50%;
-            }
-            form div input {
-                width: 65%;
-            }
-        }
-        
-        @media only screen and (max-device-width: 767px) {
-            /* Styles for phones in portrait orientation */
-            form div {
-                width: 100%;
-            }
-            form div input {
-                width: 65%;
-            }
-        }
-    </style>
+    <title>View Student</title>
+
+     <!--stylesheets-->
+     <link rel="stylesheet" href="css/edit_student.css">
+     <link rel="stylesheet" href="css/global.css">
+     <!--fonts-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+     <!--icons-->
+     <script src="https://kit.fontawesome.com/ddfd70be7f.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 
+
 <body>
-    <div class="title">Student Affairs</div>
     <header>
         <ul>
             <a href="index.html">Home</a>
@@ -188,7 +73,7 @@
             <label for="phone">Phone</label>
             <input id="phone" type="tel" disabled>
         </div>
-        <button type="button" id="back_button">Back</button>
+        <button type="button" id="back_button" class="butt" style="margin-left: 570px; margin-top: 81px;">Back</button>
 
         
         <!-- This Script redirects to search page after viewing student --> 
@@ -199,7 +84,6 @@
         </script>
         
     </form>
-    <footer>FCAI 2023 ©</footer>
 </body>
 
 </html>
