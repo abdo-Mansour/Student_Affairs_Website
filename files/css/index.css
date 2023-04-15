@@ -1,12 +1,13 @@
 * {
-    box-sizing: border-box;
+    
     font-family: 'Ubuntu',sans-serif;
     padding: 0;
     margin: 0%;
 }
 
 body {
-    background-color: #284160; 
+    background-color: #284160;
+    overflow: hidden;
 }
 
 /* Header */
@@ -19,13 +20,19 @@ body {
     font-weight: 500;
 }
 
+.container{
+    display: flex;
+    flex-direction: row;
+}
 .buttons{
-    width: 24.81%;
+
+    width: 25%;
+    margin: 1px;
     min-height: 100vh;
     color: #284160;
     background-color: #fff;
     border: 0px;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     cursor: pointer;
