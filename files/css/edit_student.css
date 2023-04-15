@@ -68,8 +68,13 @@ form .quar select {
     border: 1px solid #284160;
     border-radius: 250px;
     margin-top: 100px;
-    left: 70%;
+    /* left: 70%; */
     cursor: pointer;
+}
+
+#butt_container{
+    margin-left: auto;
+    margin-right: auto; 
 }
 
 @media only screen and (min-width: 1025px) {
