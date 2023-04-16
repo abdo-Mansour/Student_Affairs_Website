@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
     padding: 0;
     margin: 0%;
@@ -29,7 +29,7 @@ header>ul a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-}
+} */
 
 form {
     display: flex;
@@ -68,6 +68,7 @@ form .fifty input {
     border: none;
     padding: 10px;
     float: right;
+    margin-right: 60px;
 }
 
 .butt {
@@ -81,6 +82,58 @@ form .fifty input {
     margin: auto;
     margin-top: 30px;
     cursor: pointer;
+}
+
+.department {
+    padding: 31px;
+    border: 7px solid #8E939A;
+    width: 60%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+.department #dep {
+    width: 50%;
+    margin-left: 20px;
+    height: 120px;
+}
+
+.department #dep .icon,
+.department #dep .parent>div {
+    border: 1px solid #D4D4D4;
+    height: 20px;
+    background-color: #FBFBFB;
+    border-radius: 4px;
+    padding: 0px 5px;
+}
+
+.department #dep>div:first-child {
+    text-align: end;
+    transform: rotateX(0deg);
+}
+
+.department #dep>div:first-child.active {
+    transform: rotateX(180deg);
+}
+
+.parent {
+    display: none;
+}
+
+.parent.active {
+    display: block;
+}
+
+.parent>div.active::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FC7716;
+    float: right;
+    margin-top: 4px;
 }
 
 @media only screen and (min-width: 1025px) {
