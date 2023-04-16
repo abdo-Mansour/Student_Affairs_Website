@@ -1,4 +1,8 @@
-let button = document.querySelector(`.butt`);
+let button = document.querySelector(`.butt.b1`);
+let arrow = document.querySelector(`.department #dep>div:first-child`);
+let deps = document.querySelector(`.department .parent`);
+let ds = document.querySelectorAll(`.parent>div`)
+console.log(deps)
 const obj = {
     name: "a",
     Gen: "c",
@@ -11,21 +15,48 @@ const obj = {
     email: "c",
     phone: "cv"
 }
-let arr2 = JSON.stringify(obj);
-window.localStorage.setItem("DepartmentData", arr2);
-button.onclick = function() {
-    let inputs = document.querySelectorAll(`input`);
-    inputs.forEach((ele) => {
-        obj[ele.dataset.set] = ele.value;
-        ele.value = "";
-    })
-    getEleFromLocalStorage(obj);
+
+window.onload = function() {
+    let editStudent = window.localStorage.getItem("editStudent");
+    editStudent = JSON.parse(editStudent)
+    let inputs = document.querySelectorAll("input");
+    let i = 0;
+    for (a in editStudent - 1) {
+        inputs[i].value = editStudent[a];
+        i++;
+    }
+    let a = 0;
+    arrow.addEventListener("click", function() {
+        if (deps.classList.contains("active")) {
+            deps.classList.remove("active");
+        } else {
+            deps.classList.add("active");
+        }
+        if (arrow.classList.contains("active")) {
+            arrow.classList.remove("active")
+        } else {
+            arrow.classList.add("active")
+        }
+    });
+    ds.forEach((ele) => {
+        ele.addEventListener("click", (event) => {
+            ds.forEach((e) => { e.classList.remove("active") })
+            event.target.classList.add("active");
+        })
+    });
+    button.onclick = () => {
+        let aaa = document.querySelector(`.parent>div.active`);
+        editStudent["Department"] = aaa.dataset.dep;
+        console.log(editStudent["Department"])
+        console.log(editStudent);
+        editStudent = JSON.stringify(editStudent);
+        window.localStorage.setItem("editStudent", editStudent);
+    }
 }
 
-function getEleFromLocalStorage(obj) {
-    let b = window.localStorage.getItem("DepartmentData");
-    let arr = Array.from(JSON.parse(b));
-    arr.push(obj);
-    let c = JSON.stringify(arr);
-    window.localStorage.setItem("DepartmentData", c);
-}
+// window.onload = () => {
+//     let obj = { name: "hzaem", Gender: "male", cpa: "2", ID: 20210525, Level: 3, Status: "active", DateBirth: "9-29-2003", Email: "hazemelbehary@gmail.com", Phone: "01118013540", Department: "IS" };
+// obj = JSON.stringify(obj);
+// let a = window.localStorage.setItem("editStudent", obj);
+
+// }
