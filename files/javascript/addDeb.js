@@ -21,9 +21,12 @@ window.onload = function() {
     editStudent = JSON.parse(editStudent)
     let inputs = document.querySelectorAll("input");
     let i = 0;
-    for (a in editStudent - 1) {
+    for (let a in editStudent) {
         inputs[i].value = editStudent[a];
         i++;
+        if (i == 9) {
+            break;
+        }
     }
     let a = 0;
     arrow.addEventListener("click", function() {
