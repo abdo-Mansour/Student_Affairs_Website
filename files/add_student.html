@@ -1,3 +1,123 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="css/AddStudent.css">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+    <header>
+        <ul>
+            <a href="index.html">Home</a>
+            <a href="add_department.html">Edit Department</a>
+            <a href="all_students.html">All Students</a>
+            <a href="search_student.html">Search</a>
+            <a href="help.html">Help</a>
+        </ul>
+    </header>
+    <form>
+        <div class="fifty">
+            <label for="name">Name</label>
+            <input id="name" class="input" type="text" data-set="name" required>
+        </div>
+        <div class="quar">
+            <label for="Gen">Gender</label>
+            <select name="" id="Gen" data-set="Gen" class="input" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="quar">
+            <label for="cp">GPA</label>
+            <input id="cp" type="text" class="input" data-set="cp" required>
+        </div>
+        <div class="fifty">
+            <label for="ID">ID</label>
+            <input id="ID" type="number" class="input" data-set="ID" required>
+        </div>
+        <div class="quar">
+            <label for="Level">Level</label>
+            <select name="" id="Level" data-set="level" class="input" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="quar">
+            <label for="sta">Status</label>
+            <select name="" id="sta" data-set="sta" class="input" required>
+                <option value="active">active</option>
+                <option value="inactive">inactive</option>
+            </select>
+        </div>
+        <div class="fifty">
+            <label for="date">Date Birth</label>
+            <input id="date" type="date" class="input" data-set="date" required>
+        </div>
+        <div class="fifty">
+            <label for="dep">Department</label>
+            <input id="dep" type="text" class="input" data-set="dep" required>
+        </div>
+        <div class="fifty">
+            <label for="email">Email</label>
+            <input name="email" type="email" class="input" data-set="email" required>
+        </div>
+        <div class="fifty">
+            <label for="phone">Phone</label>
+            <input id="phone" class="input" type="tel" maxlength="11" minlength="11" data-set="phone" required>
+        </div>
+        <input class="butt" type="button" value="Add Studnet">
+    </form>
+    <script src="javascript/addStudent.js">
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,43 +147,54 @@
         </div>
         <div class="quar">
             <label for="Gen">Gender</label>
-            <input id="Gen" type="text" data-set="Gen">
+            <select name="" id="Gen" data-set="Gen" class="input" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
         </div>
         <div class="quar">
             <label for="GPA">GPA</label>
-            <input id="GPA" type="text" data-set="GPA">
+            <input id="GPA" type="text" data-set="GPA" required>
         </div>
         <div class="fifty">
             <label for="ID">ID</label>
-            <input id="ID" type="number" data-set="ID">
+            <input id="ID" type="number" data-set="ID" required>
         </div>
         <div class="quar">
-            <label for="level">Level</label>
-            <input id="level" type="number" max="7" min="1" data-set="level">
+            <label for="Level">Level</label>
+            <select name="" id="Level" data-set="level" class="input" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
         </div>
         <div class="quar">
             <label for="sta">Status</label>
-            <input id="sta" type="text" data-set="sta">
+            <select name="" id="sta" data-set="sta" class="input" required>
+                <option value="active">active</option>
+                <option value="inactive">inactive</option>
+            </select>
         </div>
         <div class="fifty">
             <label for="date">Date Birth</label>
-            <input id="date" type="date" data-set="date">
+            <input id="date" type="date" data-set="date" required>
         </div>
         <div class="fifty">
             <label for="dep">Department</label>
-            <input id="dep" type="text" data-set="dep">
+            <input id="dep" type="text" data-set="dep" required>
         </div>
         <div class="fifty">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" data-set="email">
+            <input id="email" name="email" type="email" data-set="email" required>
         </div>
         <div class="fifty">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" maxlength="11" minlength="11" data-set="phone">
+            <input id="phone" type="tel" maxlength="11" minlength="11" data-set="phone" required>
         </div>
         <button type="submit" onclick="store()" class="butt">Add Studnet</button>
     </form>
-    
+
     <script src="javascript/addStudent.js">
     </script>
 </body>
