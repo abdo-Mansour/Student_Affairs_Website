@@ -11,8 +11,7 @@ const obj = {
     phone: ""
 }
 
-function store()
-{
+function store() {
     obj['Name'] = document.getElementById('name').value;
     obj['Gender'] = document.getElementById('Gen').value;
     obj['GPA'] = document.getElementById('GPA').value;
@@ -25,7 +24,7 @@ function store()
     obj['phone'] = document.getElementById('phone').value;
     let key = obj['Name'];
     let object = JSON.stringify(obj);
-    localStorage.setItem(key,object);
+    localStorage.setItem(key, object);
 }
 
 

@@ -1,0 +1,76 @@
+header {
+    background-color: #FC7716;
+}
+
+header>ul {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    list-style: none;
+    padding: 20px;
+}
+
+header>ul a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button.UpButton {
+
+    margin: 200px 300px 20px;
+    border: 2px solid #284160;
+    border-radius: 29px;
+    display: flex;
+    text-align: center;
+    padding: 5px 30px;
+    margin: auto;
+    margin-top: 300px;
+}
+
+#StatDiv {
+    background: white;
+    border-radius: 30px;
+    border: 2px solid black;
+    padding: 2px 5px;
+    width: 100px;
+
+}
+
+select {
+    border: none;
+
+}
+
+#students {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+
+}
+
+#students th {
+    padding: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    background-color: #284160;
+    color: white;
+
+}
+
+
+#students td {
+    padding: 4px;
+
+}
+
+tr:nth-child(even) {
+    background-color: #FFE9C7;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}

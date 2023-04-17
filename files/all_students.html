@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>View All Students</title>
-    </head>
-    <body>
-        <header>
-            <h1>Student Affairs</h1>
-        </header>
-        <hr>
-        <!-- this is a table of students with their corresponding status as droplist-->
-        <!-- navigation bar -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home page</a></li>
-                <li><a href="add_student.html">Add student</a></li>
-                <li><a href="Search_Student.html">Search & edit</a></li>
-                <li><a href="all_students.html">View all students</a></li>
-                <li><a href="Help.html">Help</a></li>
-            </ul>
-        </nav>
-        <hr>
-        <div>
-            <h2>
-                Students
-            </h2>    
-        </div>
-        <br>
-        
-        <div>
-            <table >
-                <tr>
-                    <td><b>Student Name</b></td>
-                    <td><b>Student ID</b></td>
-                    <td><b>Student Status</b></td>
-                    
-                </tr>
-                
-                <tr>
-                    <td>Abdelrahman Fawzy</td>
-                    <td>20210527</td>
-                    <td>
-                        <select>
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
-                        </select>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>Ahmed Mansour</td>
-                    <td>20210577</td>
-                    <td>
-                        <select>
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
-                        </select>
-                    </td>    
-                </tr>
-    
-            </table>
-            <!--this button updates the table-->
-            
-            <div>
-                <button type="button">Update</button>
-            </div>
-        </div>
-        <hr>
-        <!-- Footer -->
-        <footer>
-            <center>
-                <p>FCAI 2023 &copy;</p>
-            </center>
-        </footer>
-    </body>
-</html>
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/all_students.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/179ba4f23a.js" crossorigin="anonymous"></script>
+    <title>View All Students</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <a href="index.html">Home</a>
+            <a href="add_student.html">Add Student</a>
+            <a href="all_students.html">All Students</a>
+            <a href="search_student.html">Search</a>
+            <a href="help.html">Help</a>
+        </ul>
+    </header>
+
+    <!-- this is a table of students with their corresponding status as droplist-->
+    <!-- navigation bar -->
+
+
+
+    <div>
+        <table id="students">
+            <tbody id="table">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>Student Status</th>
+                </tr>
+                <!-- <tr>
+                <td>Abdelrahman Fawzy</td>
+                <td>20210527</td>
+                <td>
+                    <div id="StatDiv">
+                        <span class="material-icons" style="color: #12F10D; font-size:10px">circle</span>
+                        <select>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Ahmed Mansour</td>
+                <td>20210577</td>
+                <td>
+                    <div id="StatDiv">
+                        <span class="material-icons" style="color: red; font-size:10px">circle</span>
+                        <select>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                </td>
+            </tr> -->
+            </tbody>
+        </table>
+        <!--this button updates the table-->
+
+        <div>
+            <button type="button" class="UpButton" onclick="viewAll()">Update</button>
+        </div>
+    </div>
+    <script src="javascript/all_students.js"></script>
+    <hr>
+    <!-- Footer -->
+    <!-- <footer style="margin-bottom: 0px ; margin-top: 25px;">
+        <center>
+            <p>FCAI 2023 &copy;</p>
+        </center>
+    </footer> -->
+</body>
+
+</html>
