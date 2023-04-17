@@ -11,7 +11,10 @@ const obj = {
     phone: ""
 }
 
+let submitBtn = document.getElementById('addStudentBtn');
+submitBtn.addEventListener('click', store);
 function store() {
+    console.log("the student is added")
     let form = document.querySelector(`form`)
     if (form.checkValidity()) {
         obj['Name'] = document.getElementById('name').value;
