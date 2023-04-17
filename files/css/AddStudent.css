@@ -1,4 +1,9 @@
-
+ * {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0%;
+ }
+ 
  form {
      display: flex;
      flex-wrap: wrap;
@@ -17,7 +22,9 @@
  }
  
  form .quar input,
- form .fifty input {
+ form .fifty input,
+ form .quar select,
+ form .fifty select {
      outline: none;
      background-color: #eee;
      border: none;
@@ -40,10 +47,12 @@
  
  @media only screen and (min-width: 1025px) {
      /* Styles for computers or larger screens */
-     form .quar input {
+     form .quar input,
+     form .quar select {
          width: 50%;
      }
-     form .fifty input {
+     form .fifty input,
+     form .fifty select {
          width: 76%;
      }
      form .quar {
@@ -59,7 +68,8 @@
      form div {
          width: 50%;
      }
-     form div input {
+     form div input,
+     form div select {
          width: 65%;
      }
  }
@@ -69,7 +79,8 @@
      form div {
          width: 100%;
      }
-     form div input {
+     form div input,
+     form div select {
          width: 65%;
      }
  }
