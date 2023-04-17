@@ -33,7 +33,7 @@ header>ul a {
     color: #ffffff;
     text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 header {
@@ -51,6 +51,7 @@ header a {
 header a:hover, a:active,a.active {
     background-color: #ffffff;
     color: #284160;
+    font-weight: bold;
     border-radius: 15px;
 }
 
