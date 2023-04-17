@@ -1,0 +1,65 @@
+button.UpButton {
+
+    margin: 200px 300px 20px;
+    border: 2px solid #284160;
+    background-color: #284160;
+    color: white;
+    border-radius: 29px;
+    display: flex;
+    text-align: center;
+    padding: 10px 40px;
+    margin: auto;
+    margin-top: 300px;
+    margin-bottom: 70px;
+}
+
+button.UpButton:hover {
+    background-color: #FFE9C7;
+    color: black;
+}
+
+#StatDiv {
+    background: white;
+    border-radius: 30px;
+    border: 2px solid black;
+    padding: 2px 5px;
+    width: 100px;
+
+}
+
+select {
+    border: none;
+
+}
+
+#students {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+
+}
+
+#students th {
+    padding: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    background-color: #284160;
+    color: white;
+
+}
+
+
+#students td {
+    padding: 4px;
+
+}
+
+tr:nth-child(even) {
+    background-color: #FFE9C7;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
