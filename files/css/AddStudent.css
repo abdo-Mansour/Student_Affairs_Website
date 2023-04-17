@@ -32,17 +32,27 @@
      float: right;
  }
  
+
  .butt {
-     width: fit-content;
-     padding: 10px;
-     font-size: 13px;
-     font-weight: bold;
-     background-color: #F9F6F6;
-     border: 1px solid #284160;
-     border-radius: 12px;
-     margin: auto;
-     margin-top: 30px;
-     cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    /* left: 70%; */
+    cursor: pointer;
+
+    width: fit-content;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #F9F6F6;
+    border: 1px solid #284160;
+    margin: auto;
+    margin-top: 30px;
+    cursor: pointer;
+ }
+
+ .butt:active , .butt:hover{
+    background-color: #284160;
+    color: white;
+    font-weight: bold;
  }
  
  @media only screen and (min-width: 1025px) {
