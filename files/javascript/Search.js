@@ -121,5 +121,15 @@ function Send_obj()
     }
 }
 
+document.getElementById("edit_button_search").onclick = function () {
+    location.href = "Edit_Student.html";
+};
+document.getElementById("edit_dept_search").onclick = function () {
+    location.href = "add_department.html";
+};
+document.getElementById("view_student_search").onclick = function () {
+    location.href = "view_student.html";
+};
+
 
 
