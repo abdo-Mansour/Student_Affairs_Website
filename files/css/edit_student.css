@@ -79,9 +79,8 @@ button:hover{
     cursor: pointer;
 }
 
-#butt_container{
-    margin-left: auto;
-    margin-right: auto; 
+.butt_container{
+    margin: auto;
 }
 
 @media only screen and (min-width: 1025px) {

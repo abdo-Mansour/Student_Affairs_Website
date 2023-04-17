@@ -36,17 +36,15 @@
  .butt {
     font-size: 16px;
     border-radius: 10px;
-    /* left: 70%; */
     cursor: pointer;
-
     width: fit-content;
     padding: 10px;
     font-weight: bold;
     background-color: #F9F6F6;
     border: 1px solid #284160;
-    margin: auto;
     margin-top: 30px;
     cursor: pointer;
+    text-align: center;
  }
 
  .butt:active , .butt:hover{
@@ -54,7 +52,11 @@
     color: white;
     font-weight: bold;
  }
- 
+
+ #btnContainer{
+    margin: auto;
+ }
+
  @media only screen and (min-width: 1025px) {
      /* Styles for computers or larger screens */
      form .quar input,
