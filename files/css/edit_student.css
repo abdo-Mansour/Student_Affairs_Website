@@ -60,6 +60,13 @@ form .quar select {
 
 }
 
+button:hover{
+    background-color: #FC7716;
+    color: #fff;
+    font-weight: bold;
+}
+
+
 .butt {
     width: 100px;
     padding: 10px;
