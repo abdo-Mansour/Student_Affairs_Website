@@ -4,77 +4,102 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="css/global.css" />
+        <link rel="stylesheet" href="css/Search.css" />
+         <!--icons-->
+    <script src="https://kit.fontawesome.com/ddfd70be7f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
         <title>Search Student</title>
     </head>
     <body>
         <header>
-            <h1>Student Affairs</h1>
-        </header>
-        <hr>
-        <!-- navigation bar -->
-        <nav>
             <ul>
-                <li><a href="index.html">Home page</a></li>
-                <li><a href="add_student.html">Add student</a></li>
-                <li><a href="Search_Student.html">Search & edit</a></li>
-                <li><a href="all_students.html">View all students</a></li>
-                <li><a href="Help.html">Help</a></li>
+                <a href="index.html">Home</a>
+                <a href="add_student.html">Add Student</a>
+                <a href="view_student.html">All Students</a>
+                <a class="active" href="search_student.html">Search</a>
+                <a href="help.html">Help</a>
             </ul>
-        </nav>
-        <hr>
-        <p>Search by: </p>
-        <div>
-            <label for="name">Name: </label>
-            <input 
-                id = "name" 
-                type="text" 
-                name = "name"
-                placeholder="Student fullname"
-                required>
-        </div>
+        </header>
         <br>
-        <input type="submit" value="Search">
-        <hr>
-        <table border="1" cellpadding = "4">
-            <caption>Students</caption>
+        <div class="Search">
+            <input 
+                class="Search_box"
+                id = "name" 
+                type="search" 
+                name = "name"
+                placeholder="Search"
+                required>
+            <i class="fa fa-search" style="color:#284160;"></i>
+        </div>
+        
+        <!-- <div class="Search_by">
+            <label for="Search_option">Search by:</label>
+                <select name="Search_option" id="Search_option">
+                    <option value="Name">Name </option>
+                    <option value="Department">Department</option>
+                </select>
+        </div> -->
+        
+        <div class="Search_by_container">
+            Search by: 
+            <input type="radio" name="Search_by" id="Name" value="Name" class="Search_by" checked>
+            <label for="Name" class="N_label">Name</label>
+            <input type="radio" name="Search_by" id="Department" value="Department" class="Search_by" >
+            <label for="Department" class="D_label">Department</label>
+          
+        </div>
+        <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Name</th>
+                    <th>ID</th>
+                    <th>Status</th>
                     <th>Select</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td><label for="select1">Mohamed Mohsen Shokry Tahseen</label></td>
                     <td><label for="select1">20210353</label></td>
-                    <td><label for="select1">Mohamed Mohsen Shokry</label></td>
                     <td>
-                        <input id="select1" type="radio" name="selected_student">
+                        <label for="select1">
+                            <span class="material-icons" style="color: #12F10D; font-size:10px">circle</span>
+                            Active
+                        </label>
                     </td>
+                        <td class="Select">
+                            <input id="select1" type="radio" name="selected_student" class="Select">
+                        </td>
+                    
                 </tr>
                 <tr>
+                    <td><label for="select2">Mohamed Mohsen Ahmed Alaa</label></td>
                     <td><label for="select2">20210557</label></td>
-                    <td><label for="select2">Mohamed Mohsen Ahmed</label></td>
                     <td>
-                        <input id="select2" type="radio" name="selected_student">
+                        <label for="select2">
+                            <span class="material-icons" style="color: #12F10D; font-size:10px">circle</span>
+                            Active
+                        </label>
                     </td>
+                 
+                        <td class="Select">
+                            <input id="select2" type="radio" name="selected_student" class="Select">
+                        </td>
+                 
                 </tr>
             </tbody>
         </table>
-        <hr>
-        <ul>
-            <li><a href="Edit_Student.html">Edit student</a></li>
-            <br>
-            <li> <a href="add_department.html">Department</a></li>
-            <br>
-            <li><a href="view_student.html">View info</a></li>
-        </ul>
-        <hr>
-        <!-- Footer -->
-        <footer>
-            <center>
-                <p>FCAI 2023 &copy;</p>
-            </center>
-        </footer>
+    
+        <div class="Buttons">
+            <button class ="Button" type="submit" formaction="Edit_Student.html">Edit student</button>
+            <button class ="Button" type="submit" formaction="add_department.html">Edit Department</button>
+            <button class ="Button" type="submit" formaction="view_student.html">View info</button>
+            <button class ="Button" type="submit" id="Delete">Delete</button>
+        </div>
+   
     </body>
 </html>
