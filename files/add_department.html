@@ -75,8 +75,14 @@
     </form>
     <div class="butts">
         <div class="butt b1">Add Department</div>
-        <div class="butt b1">Back</div>
+        <div class="butt b1" id="backBtn">Back</div>
     </div>
+    <!-- This Script redirects to search page --> 
+    <script type="text/javascript">
+        document.getElementById("backBtn").onclick = function () {
+            location.href = "Search_Student.html";
+        };
+    </script>
     <script src="javascript/addDeb.js">
     </script>
 </body>
