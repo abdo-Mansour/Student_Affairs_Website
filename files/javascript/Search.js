@@ -1,8 +1,3 @@
-
-
-
-
-
 let elements_in_table = 1;
 let max_elements = 1;
 
@@ -17,7 +12,7 @@ function insert(obj)
         let node_1 = document.createTextNode(obj.Name);
         label_1.appendChild(node_1);
         Name.appendChild(label_1);
-        
+
         let label_2 = document.createElement('label');
         label_2.setAttribute('for',elements_in_table.toString());
         let ID = table_row.insertCell(1);
@@ -38,7 +33,7 @@ function insert(obj)
         label_3.appendChild(node_3);
         Status.appendChild(label_3);
 
-    
+
         let Select = table_row.insertCell(3);
         Select.setAttribute('class','input');
         let input = document.createElement('input');
@@ -65,7 +60,7 @@ function search(){
         }
     }
     elements_in_table = 1;
-  
+
     if(document.getElementById('Name').checked){
         let person = JSON.parse(localStorage.getItem(document.getElementById('Searched_element').value));
         if(person != null && (person.status == 'Active' || person.status == 'active'))
@@ -120,16 +115,4 @@ function Send_obj()
         }
     }
 }
-
-document.getElementById("edit_button_search").onclick = function () {
-    location.href = "Edit_Student.html";
-};
-document.getElementById("edit_dept_search").onclick = function () {
-    location.href = "add_department.html";
-};
-document.getElementById("view_student_search").onclick = function () {
-    location.href = "view_student.html";
-};
-
-
 
