@@ -12,6 +12,7 @@ const obj = {
 }
 
 function store() {
+<<<<<<< HEAD
     obj['Name'] = document.getElementById('name').value;
     obj['Gender'] = document.getElementById('Gen').value;
     obj['GPA'] = document.getElementById('GPA').value;
@@ -25,6 +26,22 @@ function store() {
     let key = obj['Name'];
     let object = JSON.stringify(obj);
     localStorage.setItem(key, object);
+=======
+    let form = document.querySelector(`form`)
+    if (form.checkValidity()) {
+        obj['Name'] = document.getElementById('name').value;
+        obj['Gender'] = document.getElementById('Gen').value;
+        obj['GPA'] = document.getElementById('GPA').value;
+        obj['ID'] = document.getElementById('ID').value;
+        obj['level'] = document.getElementById('level').value;
+        obj['status'] = document.getElementById('sta').value;
+        obj['date'] = document.getElementById('date').value;
+        obj['department'] = document.getElementById('dep').value;
+        obj['email'] = document.getElementById('email').value;
+        obj['phone'] = document.getElementById('phone').value;
+        let key = obj['Name'];
+        let object = JSON.stringify(obj);
+        localStorage.setItem(key, object);
+    }
+>>>>>>> ddaae97bc3c47f704bcee1b3cd43dc6d85c9ea65
 }
-
-

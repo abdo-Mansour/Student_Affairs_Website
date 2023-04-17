@@ -27,43 +27,54 @@
         </div>
         <div class="quar">
             <label for="Gen">Gender</label>
-            <input id="Gen" type="text" data-set="Gen">
+            <select name="" id="Gen" data-set="Gen" class="input" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
         </div>
         <div class="quar">
             <label for="GPA">GPA</label>
-            <input id="GPA" type="text" data-set="GPA">
+            <input id="GPA" type="text" data-set="GPA" required>
         </div>
         <div class="fifty">
             <label for="ID">ID</label>
-            <input id="ID" type="number" data-set="ID">
+            <input id="ID" type="number" data-set="ID" required>
         </div>
         <div class="quar">
-            <label for="level">Level</label>
-            <input id="level" type="number" max="7" min="1" data-set="level">
+            <label for="Level">Level</label>
+            <select name="" id="Level" data-set="level" class="input" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
         </div>
         <div class="quar">
             <label for="sta">Status</label>
-            <input id="sta" type="text" data-set="sta">
+            <select name="" id="sta" data-set="sta" class="input" required>
+                <option value="active">active</option>
+                <option value="inactive">inactive</option>
+            </select>
         </div>
         <div class="fifty">
             <label for="date">Date Birth</label>
-            <input id="date" type="date" data-set="date">
+            <input id="date" type="date" data-set="date" required>
         </div>
         <div class="fifty">
             <label for="dep">Department</label>
-            <input id="dep" type="text" data-set="dep">
+            <input id="dep" type="text" data-set="dep" required>
         </div>
         <div class="fifty">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" data-set="email">
+            <input id="email" name="email" type="email" data-set="email" required>
         </div>
         <div class="fifty">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" maxlength="11" minlength="11" data-set="phone">
+            <input id="phone" type="tel" maxlength="11" minlength="11" data-set="phone" required>
         </div>
         <button type="submit" onclick="store()" class="butt">Add Studnet</button>
     </form>
-    
+
     <script src="javascript/addStudent.js">
     </script>
 </body>
