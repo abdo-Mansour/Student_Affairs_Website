@@ -8,31 +8,35 @@
     <title>Add Student</title>
     <link rel="stylesheet" href="css/AddDepartment.css">
     <link rel="stylesheet" href="css/global.css">
-
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    
 </head>
 
 <body>
     <header>
         <ul>
             <a href="home.html">Home</a>
-            <a href="add_student.html">Add Student</a>
+            <a class="active" href="add_student.html">Add Student</a>
             <a href="all_students.html">All Students</a>
             <a href="search_student.html">Search</a>
             <a href="help.html">Help</a>
         </ul>
     </header>
     <div class="department">
-        <p for="dep">Department</p>
+        <p class="titleDepartment" for="dep">Department:</p>
         <div id="dep" data-set="dep">
-            <div class="icon">
-                <!--<i class="fa-solid fa-caret-down"></i>-->A</div>
-            <div class="parent">
-                <div data-dep="IS" class="active">IS</div>
-                <div data-dep="CS">CS</div>
-                <div data-dep="AI">AI</div>
-                <div data-dep="IT">IT</div>
-                <div data-dep="DS">DS</div>
-            </div>
+            <select id= "depSelect" class = "departmentSelect">
+                <option value="NONE" selected>Select Department</option>
+                <option value="General">General</option>
+                <option value="CS">CS</option>
+                <option value="AI">AI</option>
+                <option value="IT">IT</option>
+                <option value="IS">IS</option>
+                <option value="DS">DS</option>
+            </select>
         </div>
     </div>
     <form>
@@ -45,7 +49,7 @@
             <input id="Gen" type="text" data-set="Gen" readonly>
         </div>
         <div class="quar">
-            <label for="cp">CPA</label>
+            <label for="cp">GPA</label>
             <input id="cp" type="text" data-set="cp" readonly>
         </div>
         <div class="fifty">
@@ -74,8 +78,8 @@
         </div>
     </form>
     <div class="butts">
-        <div class="butt b1">Add Department</div>
-        <div class="butt b1" id="backBtn">Back</div>
+        <div class="butt b1">Edit Department</div>
+        <div class="butt b2" onclick = "backPage()" id="backBtn">Back</div>
     </div>
     <!-- This Script redirects to search page --> 
     <script type="text/javascript">
@@ -83,7 +87,7 @@
             location.href = "Search_Student.html";
         };
     </script>
-    <script src="javascript/addDeb.js">
+    <script defer src="javascript/addDeb.js">
     </script>
 </body>
 
