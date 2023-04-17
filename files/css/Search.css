@@ -222,16 +222,16 @@ input[type = 'radio'].Search_by:checked + label[for='Department']{
 .search_button{
     display: inline;
     border: none;
-    background-color: #284160;
+    background-color: #602828;
     color: white;
     text-align: center;
     padding-left: 25px;
-    
+    width: 100px;
+    height: auto;
 }
 
 .search_button:hover{
     cursor: pointer;
-    background-color: #ffffff;
 }
 
 i{
