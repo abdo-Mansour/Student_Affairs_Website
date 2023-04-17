@@ -34,17 +34,16 @@
  
 
  .butt {
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    width: fit-content;
+    width: 150px;
     padding: 10px;
-    font-weight: bold;
+    font-size: 16px;
     background-color: #F9F6F6;
+    color: #284160;
     border: 1px solid #284160;
+    border-radius: 10px;
     margin-top: 30px;
+    /* left: 70%; */
     cursor: pointer;
-    text-align: center;
  }
 
  .butt:active , .butt:hover{
