@@ -109,7 +109,9 @@ function Send_obj()
 {
     let check = document.getElementsByClassName('input');
     for (let index = 0; index < check.length; index++) {
+        console.log("index: " + index");
         if (check[index].firstChild.checked) {
+            console.log("checked: " + check[index].parentNode.firstChild.firstChild.innerHTML);
             localStorage.setItem("Selected_Student",localStorage.getItem(check[index].parentNode.firstChild.firstChild.innerHTML));
             break;
         }
