@@ -19,7 +19,7 @@
             <ul>
                 <a href="index.html">Home</a>
                 <a href="add_student.html">Add Student</a>
-                <a href="view_student.html">All Students</a>
+                <a href="all_students.html">All Students</a>
                 <a class="active" href="search_student.html">Search</a>
                 <a href="help.html">Help</a>
             </ul>
@@ -92,15 +92,15 @@
     
         
         <div class="Buttons">
-            <button class ="Button" type="submit"  onclick="Send_obj()">Edit student</button>
-            <button class ="Button" type="submit"  onclick="Send_obj()">Edit Department</button>
-            <button class ="Button" type="submit"  onclick="Send_obj()">View info</button>
+            <button class ="Button" type="submit" id="edit_button_search" >Edit student</button>
+            <button class ="Button" type="submit" id="edit_dept_search"  >Edit Department</button>
+            <button class ="Button" type="submit" id="view_student_search" >View info</button>
             <button  onclick="Delete()" class ="Button"  type="submit" id="Delete">Delete</button>
         </div>
 
    
 
-        <script src="javascript/Search.js">
+        <script defer src="javascript/Search.js">
         </script>
     </body>
 </html>

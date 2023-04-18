@@ -1,6 +1,5 @@
 let button = document.querySelector(`.butt.b1`);
 let departmentSelect = document.getElementById("depSelect");
-console.log(deps)
 
 
 
@@ -21,11 +20,20 @@ window.onload = function() {
     document.getElementById('level').value = editStudent['level'];
     document.getElementById('sta').value = editStudent['status'];
     document.getElementById('date').value = editStudent['date'];
-    document.getElementById('dep').value = editStudent['department'];
+    document.getElementById("depSelect").value = editStudent['department'];
     document.getElementById('email').value = editStudent['email'];
     document.getElementById('phone').value = editStudent['phone'];
 
-    
+    // {"Name":"Abdelrahman Mansour",
+    // "Gender":"male",
+    // "GPA":"4",
+    // "ID":"2234123",
+    // "level":"1",
+    // "status":"active",
+    // "date":"2023-04-13",
+    // "department":"CS",
+    // "email":"sdfa@gmail.com",
+    // "phone":"01097747096"}
     // arrow.addEventListener("click", function() {
     //     if (deps.classList.contains("active")) {
     //         deps.classList.remove("active");

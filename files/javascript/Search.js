@@ -108,8 +108,9 @@ function Delete()
 function Send_obj()
 {
     let check = document.getElementsByClassName('input');
+    console.log("sending the object")
     for (let index = 0; index < check.length; index++) {
-        console.log("index: " + index");
+        console.log("index: " + index);
         if (check[index].firstChild.checked) {
             console.log("checked: " + check[index].parentNode.firstChild.firstChild.innerHTML);
             localStorage.setItem("Selected_Student",localStorage.getItem(check[index].parentNode.firstChild.firstChild.innerHTML));
@@ -117,4 +118,17 @@ function Send_obj()
         }
     }
 }
+
+document.getElementById("edit_button_search").onclick = function () {
+    location.href = "Edit_Student.html";
+    Send_obj();
+};
+document.getElementById("edit_dept_search").onclick = function () {
+    location.href = "add_department.html";
+    Send_obj();
+};
+document.getElementById("view_student_search").onclick = function () {
+    location.href = "view_student.html";
+    Send_obj();
+};
 
