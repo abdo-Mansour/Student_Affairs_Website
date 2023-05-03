@@ -1,4 +1,4 @@
-button.UpButton {
+.btn {
 
     margin: 200px 300px 20px;
     border: 2px solid #284160;
@@ -10,48 +10,52 @@ button.UpButton {
     margin-top: 300px;
 }
 
-#StatDiv {
+.StatDiv {
     background: white;
     border-radius: 30px;
-    border: 2px solid black;
-    padding: 2px 5px;
+    border: 0px solid rgb(125, 125, 125);
+    padding: 4px;
+    cursor: pointer;
     width: 100px;
 
 }
 
 select {
     border: none;
+    background-color: white;
 
 }
 
 #students {
-    font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 60%;
+    width: 80%;
     margin: auto;
     margin-top: 50px;
-
 }
 
 #students th {
     padding: 4px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: left;
     background-color: #284160;
     color: white;
 
 }
 
-
-#students td {
-    padding: 4px;
-
+td{
+    border-bottom: 1px solid #cacaca;
+    padding: 8px;
 }
 
-tr:nth-child(even) {
+
+tr:hover {
     background-color: #FFE9C7;
 }
 
-tr:nth-child(odd) {
-    background-color: #FFFFFF;
+.circleStat {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
 }
+
+

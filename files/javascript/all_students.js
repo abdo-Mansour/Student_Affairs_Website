@@ -1,94 +1,124 @@
 
+//get data from local storage and load it into table
+const table = document.querySelector('table');
+let currentStatus = {};
 
 for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
-
-    const ObjValue = JSON.parse(value);     // Get Object from LocalStorage //
-
-
-    const table_row = document.createElement("tr");
-    const table_data1 = document.createElement("td");
-    const table_data2 = document.createElement("td");
-    const table_data3 = document.createElement("td");
-
-    // Inside td 3 //
-    const Select = document.createElement("select");
-    const Option1 = document.createElement("option");
-    const Option2 = document.createElement("option");
-
-
-    const Node1 = document.createTextNode(ObjValue.Name);
-    const Node2 = document.createTextNode(ObjValue.ID);
-    const Node3 = document.createTextNode(ObjValue.status);
-    const Node4 = document.createTextNode("circle");
-    const Node5 = document.createTextNode("Active");
-    const Node6 = document.createTextNode("Inactive");
-
-    const Div = document.createElement("div");          // This Div will contain the Select and the options //
-    Div.setAttribute('id', 'StatDiv');
-
-    const Span = document.createElement("span");        // This Span is the Gif before Status //
-    Span.setAttribute("class", "material-icons");
-    if (ObjValue.status === "Active") {
-        Span.setAttribute("style", "color: #0eff00; font-size:10px");
-        Select.value = Node5;
-
+    if(key === "Selected_Student"){
+        continue;
     }
-    if (ObjValue.status === "Inactive") {
-        Span.setAttribute("style", "color: red; font-size:10px");
-        Select.value = Node6;
+    const student = localStorage.getItem(key);
+
+    //get data from local storage
+    let studentObj = JSON.parse(student);
+    let studentName = studentObj.Name;
+    let studentID = studentObj.ID;
+    let studentStatus = studentObj.status;
+    currentStatus[key] = studentStatus;
+    
+    //create new row
+    const newRow = table.insertRow();
+    //create cells
+    const nameCell = newRow.insertCell();
+    const idCell = newRow.insertCell();
+    const statusCell = newRow.insertCell();
+    //create text nodes
+    const nameText = document.createTextNode(studentName);
+    const idText = document.createTextNode(studentID);
+    //create select element
+    const statusSelect = document.createElement('select');
+    statusSelect.className = "selectStat";
+    //create circle element
+    const circle = document.createElement('div');
+    circle.className = "circleStat";
+    //create main div
+    const statDiv = document.createElement('div');
+    statDiv.className = "StatDiv";
+    statDiv.appendChild(circle);
+    statDiv.appendChild(statusSelect);
+    //create options
+    const options = ['Active', 'Inactive'];
+    options.forEach(option => {
+        const optionElement = document.createElement('option');
+        optionElement.value = option;
+        optionElement.textContent = option;
+        statusSelect.appendChild(optionElement);
+    });
+    
+    if(studentStatus === "Active"){
+        statusSelect.value = "Active";
+    } else if(studentStatus === "Inactive"){
+        statusSelect.value = "Inactive";
     }
 
-
-
-
-    Div.appendChild(Span);
-
-
-
-
-
-    table_data1.appendChild(Node1);
-    table_data2.appendChild(Node2);
-
-    Span.appendChild(Node4);
-    // table_data3.appendChild(Node3);
-    Option1.setAttribute("value", "Active");
-    Option1.setAttribute("value", "Inactive");
-    Option1.appendChild(Node5);
-    Option2.appendChild(Node6);
-
-    Select.appendChild(Option1);
-    Select.appendChild(Option2);
-
-    Div.appendChild(Select);
-
-    table_data3.appendChild(Div);
-
-    table_row.appendChild(table_data1);
-    table_row.appendChild(table_data2);
-    table_row.appendChild(table_data3);
-
-    const element = document.getElementById("table");
-    element.appendChild(table_row);
-
+    //add text to cells
+    nameCell.appendChild(nameText);
+    idCell.appendChild(idText);
+    statusCell.appendChild(statDiv);
+    //add id to select element
+    statusSelect.id = studentName;
 
 }
 
+//get all drop down elements
+const statDivs = document.querySelectorAll(".StatDiv");
+
+statDivs.forEach(statDiv => {
+    const circle = statDiv.querySelector(".circleStat");
+    const selectDrop = statDiv.querySelector("select");
+    const statusValue = selectDrop.value;
 
 
-// <tr>
-//                 <td>Ahmed Mansour</td>
-//                 <td>20210577</td>
-//                 <td>
-//                     <div id="StatDiv">
-//                         <span class="material-icons" style="color: red; font-size:10px">circle</span>
-//                         <select>
-//                             <option value="Active">Active</option>
-//                             <option value="Inactive">Inactive</option>
-//                         </select>
-//                     </div>
+    
+    if (statusValue === "Active") {
+        circle.style.backgroundColor = "#00ff1a";
+    } else if(statusValue === "Inactive") {
+        circle.style.backgroundColor = "#ff3300";
+    }
 
-//                 </td>
-//             </tr> 
+    selectDrop.addEventListener("change", () => statusChanged(selectDrop.id));
+    
+});
+
+//function runs when the status is changed
+function statusChanged(ID) {
+    
+    //get current status value
+    let selectDrop = document.getElementById(ID);
+    let statusValue = selectDrop.value;
+    //get previous div element
+    let circle = selectDrop.previousElementSibling;
+    //change color according to status
+    //console.log(statusValue);
+    currentStatus[ID] = statusValue;
+    
+    if (statusValue === "Active" || statusValue === "active") {
+        circle.style.backgroundColor = "#00ff1a";
+    } else if(statusValue === "Inactive" || statusValue === "inactive") {
+        circle.style.backgroundColor = "#ff3300";
+    }
+}
+
+
+//save changes to local storage
+
+function updateData(){
+    console.log("data has been updated");
+    for(let i = 0; i < localStorage.length ; i++){
+        //console.log(i);
+
+        const key = localStorage.key(i);
+        if(key === "Selected_Student"){
+            continue;
+        }
+        const student = localStorage.getItem(key);
+        let studentObj = JSON.parse(student);
+        console.log("key: " + key);
+        console.log("studentObj: " + currentStatus[key]);
+        studentObj.status = currentStatus[key];
+        localStorage.removeItem(key);
+        localStorage.setItem(key, JSON.stringify(studentObj));
+    }
+    alert("Data has been updated!");
+}
