@@ -7,6 +7,7 @@
 form {
     display: flex;
     flex-wrap: wrap;
+    padding: 50px 0px;
     width: 90%;
     margin: auto;
     flex-grow: 1;
@@ -22,11 +23,14 @@ form>div {
 
 .butts {
     display: flex;
-    width: 50%;
+    text-align: center;
+    /* width: 15%; */
     margin: auto;
-    margin-bottom: auto;
-    justify-content: space-between;
+    /* margin-bottom: auto; */
+    /* justify-content: space-between; */
     margin-bottom: 50px;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 .butts a {
@@ -39,23 +43,21 @@ form .fifty input {
     outline: none;
     background-color: #eee;
     border: none;
+    border-radius: 12px;
     padding: 10px;
     float: right;
     margin-right: 60px;
 }
 
 .butt {
-    font-size: 16px;
-    border-radius: 10px;
-    /* left: 70%; */
-    cursor: pointer;
-
+    margin: 20px;
     width: fit-content;
     padding: 10px;
-    font-weight: bold;
+    font-size: 16px;
     background-color: #F9F6F6;
+    color: #284160;
     border: 1px solid #284160;
-    margin: auto;
+    border-radius: 10px;
     margin-top: 30px;
     cursor: pointer;
  }
