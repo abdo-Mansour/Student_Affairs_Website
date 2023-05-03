@@ -25,11 +25,12 @@
  form .fifty input,
  form .quar select,
  form .fifty select {
-     outline: none;
-     background-color: #eee;
-     border: none;
-     padding: 10px;
-     float: right;
+    outline: none;
+    background-color: #eee;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    float: right;
  }
  
 
@@ -42,7 +43,6 @@
     border: 1px solid #284160;
     border-radius: 10px;
     margin-top: 30px;
-    /* left: 70%; */
     cursor: pointer;
  }
 
