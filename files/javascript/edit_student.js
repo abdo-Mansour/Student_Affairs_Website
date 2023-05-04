@@ -31,8 +31,8 @@ const obj = {
 let edit_butt = document.getElementById('edit_button');
 edit_butt.addEventListener('click', store);
 function store() {
-    console.log("the student is edited")
-    let form = document.querySelector(`form`)
+    console.log("the student is edited");
+    let form = document.querySelector(`form`);
     if (form.checkValidity()) {
         obj['Name'] = document.getElementById('name').value;
         obj['Gender'] = document.getElementById('Gen').value;
@@ -48,4 +48,6 @@ function store() {
         let object = JSON.stringify(obj);
         localStorage.setItem(key, object);
     }
+    alert("Data has been updated!");
 }
+
