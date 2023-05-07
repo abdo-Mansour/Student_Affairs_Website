@@ -1,14 +1,22 @@
 .btn {
-
-    margin: 200px 300px 20px;
-    border: 2px solid #284160;
-    border-radius: 29px;
+    border: 1px solid #284160;
+    border-radius: 10px;
     display: flex;
     text-align: center;
-    padding: 5px 30px;
+    padding: 10px;
+    font-size: 16px;
+    color: #284160;
+    text-align: center;
     margin: auto;
     margin-top: 300px;
+    cursor: pointer; 
 }
+
+.btn:active , .btn:hover{
+    background-color: #284160;
+    color: white;
+    font-weight: bold;
+ }
 
 .StatDiv {
     background: white;
