@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Student</title>
 
      <!--stylesheets-->
-     <link rel="stylesheet" href="css/edit_student.css">
-     <link rel="stylesheet" href="css/global.css">
+     <link rel="stylesheet" type="text/css" href="{% static 'edit_student.css' %}">
+     <link rel="stylesheet" href="{% static 'css/global.css'%}">    
      <!--fonts-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +87,7 @@
         <button id="back_button" class="butt">Back</button>
         <button id="edit_button" class="butt" style="margin-left: 10px;">Save</button>
         </div>
-        <script src="javascript/edit_student.js"></script>
+        <script src="/StudentAffairs/static/javascript/edit_student.js"></script>
         
        
         

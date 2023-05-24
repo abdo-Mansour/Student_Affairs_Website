@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #FC7716;
+}
+
+header>ul {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    list-style: none;
+    padding: 20px;
+}
+
+header>ul a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px;
+    width: 90%;
+    margin: auto;
+    flex-grow: 1;
+}
+
+form div {
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 29px;
+}
+
+form .quar input,
+form .fifty input,
+form .quar select {
+    outline: none;
+    background-color: #eee;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    float: right;
+
+}
+
+button:hover{
+    background-color: #284160;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.butt {
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #F9F6F6;
+    color: #284160;
+    border: 1px solid #284160;
+    border-radius: 10px;
+    margin-top: 100px;
+    cursor: pointer;
+}
+
+.butt_container{
+    margin: auto;
+}
+
+@media only screen and (min-width: 1025px) {
+    /* Styles for computers or larger screens */
+    form .quar input {
+        width: 50%;
+    }
+    form .fifty input {
+        width: 76%;
+    }
+    form .quar {
+        width: 25%;
+    }
+    form .fifty {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles for tablets in portrait orientation */
+    form div {
+        width: 50%;
+    }
+    form div input {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-device-width: 767px) {
+    /* Styles for phones in portrait orientation */
+    form div {
+        width: 100%;
+    }
+    form div input {
+        width: 65%;
+    }
+}

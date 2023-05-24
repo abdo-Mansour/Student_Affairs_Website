@@ -15,4 +15,4 @@ class Student(models.Model):
     Gender = models.CharField(max_length=6)
 
     def __str__(self):
-        return f"{self.id}: {self.name}, "
+        return f"{self.id}: {self.name}"
