@@ -11,3 +11,8 @@ class Student(models.Model):
     level = models.IntegerField()
     Status = models.BooleanField()
     phone = models.CharField(max_length=12)
+    Department = models.CharField(max_length=2)
+    Gender = models.CharField(max_length=6)
+
+    def __str__(self):
+        return f"{self.id}: {self.name}, "
