@@ -49,6 +49,30 @@ def edit(request):
         'form': form
     })
 
+def view(request):
+    instance = Student.objects.get(id = '20210089')#This should get the object student
+    formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
+                'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
+                'DOB': instance.dateOfBirth, 'department': instance.department,
+                'email' : instance.email, 'phone': instance.phone}
+    form = addStudentForm(initial=formData)
+    
+    #now we disable the input field.
+    form.fields['name'].widget.attrs['disabled'] = True
+    form.fields['id'].widget.attrs['disabled'] = True
+    form.fields['gender'].widget.attrs['disabled'] = True
+    form.fields['gpa'].widget.attrs['disabled'] = True
+    form.fields['level'].widget.attrs['disabled'] = True
+    form.fields['status'].widget.attrs['disabled'] = True
+    form.fields['DOB'].widget.attrs['disabled'] = True
+    form.fields['department'].widget.attrs['disabled'] = True
+    form.fields['email'].widget.attrs['disabled'] = True
+    form.fields['phone'].widget.attrs['disabled'] = True        
+
+    return render(request, 'viewStudent/view_student.html', {
+        'form' : form
+    })
+
 def home(request):
     return render(request, 'home/home.html')
 
