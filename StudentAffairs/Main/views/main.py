@@ -37,7 +37,17 @@ def index(request):
     return render(request, "index/index.html") 
 
 def edit(request):
-    return render(request, 'editStudent/Edit_Student.html')
+    instance = Student.objects.get(id = '20210089')#This should get the object student
+    formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
+                'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
+                'DOB': instance.dateOfBirth, 'department': instance.department,
+                'email' : instance.email, 'phone': instance.phone}
+    form = addStudentForm(initial=formData)
+
+
+    return render(request, 'editStudent/Edit_Student.html' , {
+        'form': form
+    })
 
 def home(request):
     return render(request, 'home/home.html')
