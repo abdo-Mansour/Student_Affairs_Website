@@ -7,5 +7,5 @@ def index(request):
 def edit(request):
     return render(request, 'editStudent/Edit_Student.html')
 
-def main(request):
+def home(request):
     return render(request, 'home/home.html')
