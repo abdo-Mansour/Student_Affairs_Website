@@ -20,6 +20,14 @@ statuses = [
     ('Inactive', 'Inactive'),
 ]
 
+departments = [
+    ('CS', 'CS'),
+    ('AI', 'AI'),
+    ('IT', 'IT'),
+    ('IS', 'IS'),
+    ('DS', 'DS'),
+]
+
 class addStudentForm(forms.Form):
     name = forms.CharField(label='Name')
     id = forms.CharField(label='studentId')
@@ -29,7 +37,7 @@ class addStudentForm(forms.Form):
     level = forms.ChoiceField(label='studentLevel', choices=levelChoices)
     status = forms.ChoiceField(label='studentStatus', choices=statuses)
     phone = forms.CharField(label='studentPhone')
-    department = forms.CharField(label='studentDep')
+    department = forms.ChoiceField(label='studentDep', choices=departments)
     gender = forms.ChoiceField(label='studentGender', choices=genderChoices)
 
 # Create your views here.
@@ -50,7 +58,7 @@ def edit(request):
     })
 
 def view(request):
-    instance = Student.objects.get(id = '20210089')#This should get the object student
+    instance = Student.objects.get(id = '20210057')#This should get the object student
     formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
                 'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
                 'DOB': instance.dateOfBirth, 'department': instance.department,
