@@ -59,7 +59,6 @@ def formSubmission(request):
         t_dep = request.POST['department']
         t_email = request.POST['email']
         t_phone = request.POST['phone']
-
         temp = Student(name=t_name, gender=t_gender, gpa=t_gpa, id=t_id, level=t_level, status=t_status, dateOfBirth=t_DOB, 
                        department=t_dep, email=t_email, phone=t_phone)
         
