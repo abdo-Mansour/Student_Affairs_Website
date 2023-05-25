@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+    {%load static%}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Student</title>
-    <link rel="stylesheet" href="css/AddStudent.css">
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/AddStudent.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <!--fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,64 +25,56 @@
             <a href="help.html">Help</a>
         </ul>
     </header>
-    <form>
+    <form method= 'post'>
+
+        {% csrf_token %}
+
         <div class="fifty">
-            <label for="name">Name</label>
-            <input id="name" type="text" data-set="name" required>
+            <label>Name </label>
+            {{form.name}}
         </div>
         <div class="quar">
-            <label for="Gen">Gender</label>
-            <select name="" id="Gen" data-set="Gen" class="input" required>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
+            <label>Gender</label>
+            {{form.gender}}
         </div>
         <div class="quar">
             <label for="GPA">GPA</label>
-            <input id="GPA" type="text" data-set="GPA" required>
+            {{form.gpa}}
         </div>
         <div class="fifty">
             <label for="ID">ID</label>
-            <input id="ID" type="number" data-set="ID" required>
+            {{form.id}}
         </div>
         <div class="quar">
             <label for="level">Level</label>
-            <select name="" id="level" data-set="level" class="input" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
+            {{form.level}}
         </div>
         <div class="quar">
             <label for="sta">Status</label>
-            <select name="" id="sta" data-set="sta" class="input" required>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-            </select>
+            {{form.status}}
         </div>
         <div class="fifty">
             <label for="date">Date Birth</label>
-            <input id="date" type="date" data-set="date" required>
+            {{form.DOB}}
         </div>
         <div class="fifty">
             <label for="dep">Department</label>
-            <input id="dep" type="text" data-set="dep" required>
+            {{form.department}}
         </div>
         <div class="fifty">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" data-set="email" required>
+            {{form.email}}
         </div>
         <div class="fifty">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" maxlength="11" minlength="11" data-set="phone" required>
+            {{form.phone}}
         </div>
         <div id="btnContainer">
-            <button id="addStudentBtn" type="submit" class="butt">Add Student</button>
+            <button id="addStudentBtn" type="submit" class="butt" formaction="/save">Add Student</button>
         </div>
     </form>
 
-    <script src="javascript/addStudent.js">
+    <script src="{% static 'javascript/addStudent.js' %}">
     </script>
 </body>
 
