@@ -47,62 +47,77 @@ function insert(obj)
 
 
 function search(){
+    console.log("searching");
 
-    let body = document.getElementsByTagName('tr');
-    for (let index = 0; index < body.length;) {
-        if (body[index].getAttribute('class') != 'head') {
-            body[index].remove();
-            body.length -=1;
-        }
-        else
-        {
-            index++;
-        }
-    }
-    elements_in_table = 1;
 
-    if(document.getElementById('Name').checked){
-        let person = JSON.parse(localStorage.getItem(document.getElementById('Searched_element').value));
-        if(person != null && (person.status == 'Active' || person.status == 'active'))
-        {
-            insert(person);
-        }
-    }
-    else
-    {
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            const value = localStorage.getItem(key);
-            const ObjValue = JSON.parse(value);
-            if(ObjValue.department == document.getElementById('Searched_element').value && (ObjValue.status == 'Active' || ObjValue.status == 'active' ))
-            {
-                insert(ObjValue);
-            }
-            elements_in_table++;
-        }
-        max_elements = elements_in_table;
-    }
+    // let body = document.getElementsByTagName('tr');
+    // for (let index = 0; index < body.length;) {
+    //     if (body[index].getAttribute('class') != 'head') {
+    //         body[index].remove();
+    //         body.length -=1;
+    //     }
+    //     else
+    //     {
+    //         index++;
+    //     }
+    // }
+    // elements_in_table = 1;
+
+    // if(document.getElementById('Name').checked){
+    //     let person = JSON.parse(localStorage.getItem(document.getElementById('Searched_element').value));
+    //     if(person != null && (person.status == 'Active' || person.status == 'active'))
+    //     {
+    //         insert(person);
+    //     }
+    // }
+    // else
+    // {
+    //     for (let i = 0; i < localStorage.length; i++) {
+    //         const key = localStorage.key(i);
+    //         const value = localStorage.getItem(key);
+    //         const ObjValue = JSON.parse(value);
+    //         if(ObjValue.department == document.getElementById('Searched_element').value && (ObjValue.status == 'Active' || ObjValue.status == 'active' ))
+    //         {
+    //             insert(ObjValue);
+    //         }
+    //         elements_in_table++;
+    //     }
+    //     max_elements = elements_in_table;
+    // }
+    
 }
 
 
 function Delete()
 {
-    for (let index = 1; index <= max_elements; index++) {
-        if(elements_in_table == 0)
+    let allSelect = document.getElementsByClassName('Select');
+    for(let i = 0; i < allSelect.length; i++)
+    {
+        if(allSelect[i].checked)
         {
-            max_elements = elements_in_table;
+            // localStorage.removeItem(allSelect[i].parentNode.parentNode.firstChild.firstChild.innerHTML);
+            allSelect[i].parentNode.parentNode.remove();
+            //TODO: remove from the database
             break;
         }
-        if (document.getElementById(index.toString()) != null){
-            if(document.getElementById(index.toString()).checked)
-            {
-                let Selected = document.getElementById(index.toString());
-                localStorage.removeItem(Selected.parentNode.parentNode.firstChild.firstChild.innerHTML);
-                Selected.parentNode.parentNode.remove();
-                break;
-            } 
-        }
     }
+    // for (let index = 1; index <= max_elements; index++) {
+    //     if(elements_in_table == 0)
+    //     {
+    //         max_elements = elements_in_table;
+    //         break;
+    //     }
+    //     if (document.getElementById(index.toString()) != null){
+    //         if(document.getElementById(index.toString()).checked)
+    //         {
+    //             let Selected = document.getElementById(index.toString());
+    //             // localStorage.removeItem(Selected.parentNode.parentNode.firstChild.firstChild.innerHTML);
+                
+    //             Selected.parentNode.parentNode.remove();
+    //             break;
+    //         } 
+    //     }
+    // }
 }
 
 function Send_obj()

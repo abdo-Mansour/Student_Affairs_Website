@@ -45,7 +45,8 @@ def index(request):
     return render(request, "index/index.html") 
 
 def edit(request):
-    instance = Student.objects.get(id = '20210089')#This should get the object student
+    idToEdit = request.POST.get('selected_student')
+    instance = Student.objects.get(id = idToEdit )#This should get the object student
     formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
                 'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
                 'DOB': instance.dateOfBirth, 'department': instance.department,
@@ -58,7 +59,8 @@ def edit(request):
     })
 
 def view(request):
-    instance = Student.objects.get(id = '20210057')#This should get the object student
+    idToView = request.POST.get('selected_student')
+    instance = Student.objects.get(id = idToView)#This should get the object student
     formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
                 'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
                 'DOB': instance.dateOfBirth, 'department': instance.department,
