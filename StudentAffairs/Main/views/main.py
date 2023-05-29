@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from Main.models import Student
 from django import forms
-from django.contrib import messages
 
 genderChoices = [
     ('Male', 'Male'),
@@ -120,7 +119,6 @@ def formSubmission(request):
         )
         
         temp.save()
-        messages.success(request, "Data Saved")
         return redirect('/search')
     else:
         form = addStudentForm()
