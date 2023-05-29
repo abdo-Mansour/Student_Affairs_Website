@@ -8,8 +8,7 @@ urlpatterns = [
     path('edit-student', main.edit, name='edit'),
     path('add-student', main.addStudent, name='add'),
     path('save', main.formSubmission, name='save'),
-    path('view-student', main.view, name='view'),#here I chose the same edit function becauase both load data
-    #search urls
+    path('view-student', main.view, name='view'),
     path('search', search.search, name='search'),
     path('search-query', search.searchQuery, name='searchQuery'),
     path('search-delete', search.delete, name='delete'),
