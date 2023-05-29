@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from Main.models import Student
 from django import forms
+from django.contrib import messages
 
 genderChoices = [
     ('Male', 'Male'),
@@ -93,18 +93,36 @@ def addStudent(request):
 
 def formSubmission(request):
     if request.method == 'POST':
-        t_name = request.POST['name']
-        t_gender = request.POST['gender']
-        t_gpa = request.POST['gpa']
-        t_id = request.POST['id']
-        t_level = request.POST['level']
-        t_status = request.POST['status']
-        t_DOB = request.POST['DOB']
-        t_dep = request.POST['department']
-        t_email = request.POST['email']
-        t_phone = request.POST['phone']
-        temp = Student(name=t_name, gender=t_gender, gpa=t_gpa, id=t_id, level=t_level, status=t_status, dateOfBirth=t_DOB, 
-                       department=t_dep, email=t_email, phone=t_phone)
+        form = addStudentForm(request.POST)
+        if form.is_valid():
+            t_name = form.cleaned_data['name']
+            t_gender = form.cleaned_data['gender']
+            t_gpa = form.cleaned_data['gpa']
+            t_id = form.cleaned_data['id']
+            t_level = form.cleaned_data['level']
+            t_status = form.cleaned_data['status']
+            t_DOB = form.cleaned_data['DOB']
+            t_dep = form.cleaned_data['department']
+            t_email = form.cleaned_data['email']
+            t_phone = form.cleaned_data['phone']
+        
+        temp = Student(
+            name = t_name,
+            gender = t_gender,
+            gpa = t_gpa,
+            id = t_id,
+            level = t_level,
+            status = t_status,
+            dateOfBirth = t_DOB,
+            department = t_dep,
+            email = t_email,
+            phone = t_phone
+        )
         
         temp.save()
-        return HttpResponse("Data saved!")
+        messages.success(request, "Data Saved")
+        return redirect('/search')
+    else:
+        form = addStudentForm()
+
+    return render(request, 'add-student', {'form': form})
