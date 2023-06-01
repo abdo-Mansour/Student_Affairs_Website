@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from Main.models import Student
 from django import forms
+from django.template import loader
+from django.http import HttpResponse
+
 
 genderChoices = [
     ('Male', 'Male'),
@@ -124,3 +127,18 @@ def formSubmission(request):
         form = addStudentForm()
 
     return render(request, 'add-student', {'form': form})
+
+def all(request):
+    
+    Students = Student.objects.all().values()
+    # template = loader.get_template('allStudents/all_students.html')
+    context = {
+        'Students':Students
+    }
+    print(Students)
+    return render(request, 'allStudents/all_students.html', context)
+    # return HttpResponse(template.render(context,request))
+    
+def post_request(request):
+    print(request.POST)
+    return HttpResponse("Request Successful")

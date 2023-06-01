@@ -17,7 +17,10 @@
     color: white;
     font-weight: bold;
  }
-
+span{
+    color: #0eff00;
+    font-size:10px
+}
 .StatDiv {
     background: white;
     border-radius: 30px;
@@ -30,6 +33,7 @@
 
 select {
     border: none;
+    outline: none;
     background-color: white;
 
 }
@@ -48,7 +52,10 @@ select {
     color: white;
 
 }
-
+.custom-circle{
+    color:#0eff00;
+    font-size: 14px;;
+}
 td{
     border-bottom: 1px solid #cacaca;
     padding: 8px;
