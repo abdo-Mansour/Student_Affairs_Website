@@ -7,21 +7,18 @@ function insert(obj)
         let table_row = table.insertRow(-1);
 
         let label_1 = document.createElement('label');
-        label_1.setAttribute('for',elements_in_table.toString());
         let Name = table_row.insertCell(0);
-        let node_1 = document.createTextNode(obj.Name);
+        let node_1 = document.createTextNode(obj.name);
         label_1.appendChild(node_1);
         Name.appendChild(label_1);
 
         let label_2 = document.createElement('label');
-        label_2.setAttribute('for',elements_in_table.toString());
         let ID = table_row.insertCell(1);
-        let node_2 = document.createTextNode(obj.ID);
+        let node_2 = document.createTextNode(obj.id);
         label_2.appendChild(node_2);
         ID.appendChild(label_2);
 
         let label_3 = document.createElement('label');
-        label_3.setAttribute('for',elements_in_table.toString());
         let Status = table_row.insertCell(2);
         let circle = document.createElement('span');
         circle.setAttribute('class','material-icons');
@@ -37,7 +34,8 @@ function insert(obj)
         let Select = table_row.insertCell(3);
         Select.setAttribute('class','input');
         let input = document.createElement('input');
-        input.setAttribute('id',elements_in_table.toString());
+        input.setAttribute('id',obj.id);
+        input.setAttribute('value',obj.id);
         input.setAttribute('type','radio');
         input.setAttribute('name','selected_student');
         input.setAttribute('class','Select');
@@ -49,7 +47,7 @@ function insert(obj)
 function search(){
     console.log("searching");
 
-
+    
     // let body = document.getElementsByTagName('tr');
     // for (let index = 0; index < body.length;) {
     //     if (body[index].getAttribute('class') != 'head') {
