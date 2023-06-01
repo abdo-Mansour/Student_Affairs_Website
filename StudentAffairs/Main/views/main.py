@@ -46,6 +46,9 @@ class addStudentForm(forms.Form):
 def index(request):
     return render(request, "index/index.html") 
 
+def help(request):
+    return render(request, "help/help.html")
+
 def edit(request):
     idToEdit = request.GET.get('id')
     instance = Student.objects.get(id = idToEdit )#This should get the object student

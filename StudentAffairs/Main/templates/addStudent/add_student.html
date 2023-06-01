@@ -18,11 +18,11 @@
 <body>
     <header>
         <ul>
-            <a href="home">Home</a>
-            <a class= "active" href="add-student">Add Student</a>
-            <a href="all_students.html">All Students</a>
-            <a href="search_student.html">Search</a>
-            <a href="help.html">Help</a>
+            <a href="{% url 'home'%}">Home</a>
+            <a class= "active" href="{% url 'add'%}">Add Student</a>
+            <a href="{% url 'all'%}">All Students</a>
+            <a href="{% url 'search'%}">Search</a>
+            <a href="{% url 'help'%}">Help</a>
         </ul>
     </header>
     <form method= 'post'>

@@ -5,6 +5,7 @@ from .views import search
 urlpatterns = [
     path('', main.index, name='index'),
     path('home', main.home, name='home'),
+    path('help', main.help, name='help'),
     path('edit-student', main.edit, name='edit'),
     path('add-student', main.addStudent, name='add'),
     path('save', main.formSubmission, name='save'),
