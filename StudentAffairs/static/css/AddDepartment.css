@@ -1,73 +1,3 @@
-
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0%;
-}
-form {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 50px 0px;
-    width: 90%;
-    margin: auto;
-    flex-grow: 1;
-}
-
-form>div {
-    padding-right: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 29px;
-}
-
-.butts {
-    display: flex;
-    text-align: center;
-    /* width: 15%; */
-    margin: auto;
-    /* margin-bottom: auto; */
-    /* justify-content: space-between; */
-    margin-bottom: 50px;
-    justify-content: center;
-    /* align-items: center; */
-}
-
-.butts a {
-    text-decoration: none;
-    color: #000;
-}
-
-form .quar input,
-form .fifty input {
-    outline: none;
-    background-color: #eee;
-    border: none;
-    border-radius: 12px;
-    padding: 10px;
-    float: right;
-    margin-right: 60px;
-}
-
-.butt {
-    margin: 20px;
-    width: fit-content;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #F9F6F6;
-    color: #284160;
-    border: 1px solid #284160;
-    border-radius: 10px;
-    margin-top: 30px;
-    cursor: pointer;
- }
-
- .butt:active , .butt:hover{
-    background-color: #284160;
-    color: white;
-    font-weight: bold;
- }
-
  .titleDepartment{
     font-size: 25px;
     padding: 9px;
@@ -99,6 +29,91 @@ form .fifty input {
     font-size: 200px;
 }
 
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #FC7716;
+}
+
+header>ul {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    list-style: none;
+    padding: 20px;
+}
+
+header>ul a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px;
+    width: 90%;
+    margin: auto;
+    flex-grow: 1;
+}
+
+form div {
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 29px;
+}
+
+form .quar input,
+form .fifty input,
+form .quar select {
+    outline: none;
+    background-color: #eee;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    float: right;
+
+}
+
+button:hover{
+    background-color: #284160;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.butt {
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #F9F6F6;
+    color: #284160;
+    border: 1px solid #284160;
+    border-radius: 10px;
+    margin-top: 100px;
+    cursor: pointer;
+}
+
+.butt_container{
+    margin: auto;
+}
 
 @media only screen and (min-width: 1025px) {
     /* Styles for computers or larger screens */
