@@ -168,7 +168,7 @@ function editStudent(){
             // Convert the data to a query string
             
             // Construct the URL with the query string
-            var url = "/view-student?id=" + encodeURIComponent(allSelect[i].value); // Replace 'another-page' with the actual URL name in your Django urlpatterns
+            var url = "/edit-student?id=" + encodeURIComponent(allSelect[i].value); // Replace 'another-page' with the actual URL name in your Django urlpatterns
             
             // Navigate to the new page
             window.location.href = url;
@@ -190,7 +190,7 @@ function editDep(){
             // Convert the data to a query string
             
             // Construct the URL with the query string
-            var url = "/view-student?id=" + encodeURIComponent(allSelect[i].value); // Replace 'another-page' with the actual URL name in your Django urlpatterns
+            var url = "/edit-department?id=" + encodeURIComponent(allSelect[i].value); // Replace 'another-page' with the actual URL name in your Django urlpatterns
             
             // Navigate to the new page
             window.location.href = url;

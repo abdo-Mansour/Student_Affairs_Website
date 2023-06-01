@@ -47,7 +47,7 @@ def index(request):
     return render(request, "index/index.html") 
 
 def edit(request):
-    idToEdit = request.POST.get('selected_student')
+    idToEdit = request.GET.get('id')
     instance = Student.objects.get(id = idToEdit )#This should get the object student
     formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
                 'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
@@ -146,7 +146,7 @@ def post_request(request):
 
 
 def editDepartment(request):
-    idToView = request.POST.get('selected_student')
+    idToView = request.GET.get('id')
     instance = Student.objects.get(id = idToView)#This should get the object student
     formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
                 'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
