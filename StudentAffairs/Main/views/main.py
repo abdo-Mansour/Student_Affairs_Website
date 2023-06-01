@@ -156,17 +156,7 @@ def editDepartment(request):
                 'DOB': instance.dateOfBirth, 'department': instance.department,
                 'email' : instance.email, 'phone': instance.phone}
     form = addStudentForm(initial=formData)
-
-    #now we disable the input field.
-    form.fields['name'].widget.attrs['disabled'] = True
-    form.fields['id'].widget.attrs['disabled'] = True
-    form.fields['gender'].widget.attrs['disabled'] = True
-    form.fields['gpa'].widget.attrs['disabled'] = True
-    form.fields['level'].widget.attrs['disabled'] = True
-    form.fields['status'].widget.attrs['disabled'] = True
-    form.fields['DOB'].widget.attrs['disabled'] = True
-    form.fields['email'].widget.attrs['disabled'] = True
-    form.fields['phone'].widget.attrs['disabled'] = True        
+   
     return render(request, "editDepartment/edit_department.html", {
         'form': form
     })
