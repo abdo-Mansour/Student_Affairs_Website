@@ -28,16 +28,12 @@
     </header>
     <form method="post">
         {% csrf_token %}
-    <div class="department">
-        <p class="titleDepartment">Department:</p>
-        <div id="dep">
-            {{form.department}}
+        <div class="department">
+            <p class="titleDepartment">Department:</p>
+            <div id="dep">
+                {{form.department}}
+            </div>
         </div>
-    </div>
-    </form>
-    <form method="post">
-        {% csrf_token %}
-
         <div class="fifty">
             <label>Name</label>
             {{form.name}}
