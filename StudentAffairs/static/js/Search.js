@@ -130,9 +130,72 @@ function deleteStudent()
             break;
         }
     }
-
-
-
    
 }
 
+function viewStudent(){
+
+    console.log("view clicked");
+    let allSelect = document.getElementsByClassName('Select');
+    for(let i = 0; i < allSelect.length; i++)
+    {
+        if(allSelect[i].checked)
+        {
+    
+            // Convert the data to a query string
+            
+            // Construct the URL with the query string
+            var url = "/view-student?id=" + encodeURIComponent(allSelect[i].value); // Replace 'another-page' with the actual URL name in your Django urlpatterns
+            
+            // Navigate to the new page
+            window.location.href = url;
+            break;
+        }
+    }
+
+}
+
+
+function editStudent(){
+
+    console.log("edit clicked");
+    let allSelect = document.getElementsByClassName('Select');
+    for(let i = 0; i < allSelect.length; i++)
+    {
+        if(allSelect[i].checked)
+        {
+        
+            // Convert the data to a query string
+            
+            // Construct the URL with the query string
+            var url = "/view-student?id=" + encodeURIComponent(allSelect[i].value); // Replace 'another-page' with the actual URL name in your Django urlpatterns
+            
+            // Navigate to the new page
+            window.location.href = url;
+            break;
+        }
+    }
+
+}
+
+
+function editDep(){
+
+    console.log("view clicked");
+    let allSelect = document.getElementsByClassName('Select');
+    for(let i = 0; i < allSelect.length; i++)
+    {
+        if(allSelect[i].checked)
+        {
+            // Convert the data to a query string
+            
+            // Construct the URL with the query string
+            var url = "/view-student?id=" + encodeURIComponent(allSelect[i].value); // Replace 'another-page' with the actual URL name in your Django urlpatterns
+            
+            // Navigate to the new page
+            window.location.href = url;
+            break;
+        }
+    }
+
+}

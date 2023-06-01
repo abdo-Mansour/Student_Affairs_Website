@@ -61,7 +61,7 @@ def edit(request):
     })
 
 def view(request):
-    idToView = request.POST.get('selected_student')
+    idToView = request.GET.get('id')
     instance = Student.objects.get(id = idToView)#This should get the object student
     formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
                 'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
