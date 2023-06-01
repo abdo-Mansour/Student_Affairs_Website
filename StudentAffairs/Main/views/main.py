@@ -150,15 +150,22 @@ def post_request(request):
 
 def editDepartment(request):
     idToView = request.GET.get('id')
-    instance = Student.objects.get(id = idToView)#This should get the object student
-    formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
-                'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
-                'DOB': instance.dateOfBirth, 'department': instance.department,
-                'email' : instance.email, 'phone': instance.phone}
-    form = addStudentForm(initial=formData)
-   
+    student = Student.objects.get(id = idToView)#This should get the object student
+    
     return render(request, "editDepartment/edit_department.html", {
-        'form': form
+        'id': student.id,
+        'department': student.department,
+        'student': student,
     })
+
+
+def editStudentDep(request):
+    id = request.GET.get('id')
+    department = request.GET.get('dep')
+    student = Student.objects.get(id = id)
+    student.department = department
+    student.save()
+    return HttpResponse("Request Successful")
+    
 
     

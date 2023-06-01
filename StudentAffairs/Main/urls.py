@@ -16,4 +16,5 @@ urlpatterns = [
     path('all_students.html/',main.all, name='all'),
     path('all_students.html/post_request',main.post_request, name='post_request'),
     path('edit-department', main.editDepartment, name='editDepartment'),
+    path('departmentSave', main.editStudentDep, name='saveDepartment'),
 ]

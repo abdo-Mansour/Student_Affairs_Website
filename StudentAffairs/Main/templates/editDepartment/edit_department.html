@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Student</title>
+    <script defer src="{% static 'js/editDep.js'%}"></script>
     <link rel="stylesheet" href="{% static 'css/AddDepartment.css' %}">
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <!--fonts-->
@@ -26,56 +27,27 @@
             <a href="{% url 'help'%}">Help</a>
         </ul>
     </header>
-    <form method="post">
-        {% csrf_token %}
-        <div class="department">
-            <p class="titleDepartment">Department:</p>
-            <div id="dep">
-                {{form.department}}
-            </div>
+    {% csrf_token %}
+    <div class="department">
+        <p class="titleDepartment">Department:</p>
+        <div id="dep">
+            <select id = "depSelect">
+                <option value="CS" {% if department == 'CS'%} selected {% endif %}>CS</option>
+                <option value="AI" {% if department == 'AI'%} selected {% endif %}>AI</option>
+                <option value="IT" {% if department == 'IT'%} selected {% endif %}>IT</option>
+                <option value="IS" {% if department == 'IS'%} selected {% endif %}>IS</option>
+                <option value="DS" {% if department == 'DS'%} selected {% endif %}>DS</option>
+            </select>
         </div>
-        <div class="fifty">
-            <label>Name</label>
-            {{form.name}}
-        </div>
-        <div class="quar">
-            <label>Gender</label>
-            {{form.gender}}
-        </div>
-        <div class="quar">
-            <label>GPA</label>
-            {{form.gpa}}
-        </div>
-        <div class="fifty">
-            <label>ID</label>
-            {{form.id}}
-        </div>
-        <div class="quar">
-            <label>Level</label>
-            {{form.level}}
-        </div>
-        <div class="quar">
-            <label>Status</label>
-            {{form.status}}
-        </div>
-        <div class="fifty">
-            <label>Date Birth</label>
-            {{form.DOB}}
-        </div>
-        <div class="fifty">
-            <label>Email</label>
-            {{form.email}}
-        </div>
-        <div class="fifty">
-            <label>Phone</label>
-            {{form.phone}}
-        </div>
-
-        <div class="butt_container">
-            <button type="submit" formaction="/save" class="butt">Save</button>
-            <button class="butt" type="submit" formaction="/search" id="backBtn">Back</button>
-        </div>
-    </form>
+    </div>
+    <h1>Student Data:</h2>
+    <h2>Name: {{student.name}}</h3>
+    <h2 id="studentId">{{student.id}}</h3>
+    <h2>Level: {{student.level}}</h3>
+    <div class="butt_container">
+        <button type="submit" onclick="updateDep()" class="butt">Save</button>
+        <button class="butt" type="submit" onclick="back()" id="backBtn">Back</button>
+    </div>
     
 </body>
 
