@@ -143,3 +143,29 @@ def post_request(request):
         student.status = status
         student.save()
     return HttpResponse("Request Successful")
+
+
+def editDepartment(request):
+    idToView = request.POST.get('selected_student')
+    instance = Student.objects.get(id = idToView)#This should get the object student
+    formData = {'name': instance.name, 'id': instance.id, 'gender': instance.gender,
+                'gpa': instance.gpa, 'level': instance.level, 'status': instance.status,
+                'DOB': instance.dateOfBirth, 'department': instance.department,
+                'email' : instance.email, 'phone': instance.phone}
+    form = addStudentForm(initial=formData)
+
+    #now we disable the input field.
+    form.fields['name'].widget.attrs['disabled'] = True
+    form.fields['id'].widget.attrs['disabled'] = True
+    form.fields['gender'].widget.attrs['disabled'] = True
+    form.fields['gpa'].widget.attrs['disabled'] = True
+    form.fields['level'].widget.attrs['disabled'] = True
+    form.fields['status'].widget.attrs['disabled'] = True
+    form.fields['DOB'].widget.attrs['disabled'] = True
+    form.fields['email'].widget.attrs['disabled'] = True
+    form.fields['phone'].widget.attrs['disabled'] = True        
+    return render(request, "editDepartment/edit_department.html", {
+        'form': form
+    })
+
+    

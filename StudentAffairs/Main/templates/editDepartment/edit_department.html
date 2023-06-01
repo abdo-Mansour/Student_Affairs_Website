@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+    {%load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Student</title>
-    <link rel="stylesheet" href="css/AddDepartment.css">
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="{% static 'css/AddDepartment.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <!--fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,70 +26,61 @@
             <a href="help.html">Help</a>
         </ul>
     </header>
+    <form method="post">
+        {% csrf_token %}
     <div class="department">
-        <p class="titleDepartment" for="dep">Department:</p>
-        <div id="dep" data-set="dep">
-            <select id= "depSelect" class = "departmentSelect">
-                <option value="NONE" selected>Select Department</option>
-                <option value="General">General</option>
-                <option value="CS">CS</option>
-                <option value="AI">AI</option>
-                <option value="IT">IT</option>
-                <option value="IS">IS</option>
-                <option value="DS">DS</option>
-            </select>
+        <p class="titleDepartment">Department:</p>
+        <div id="dep">
+            {{form.department}}
         </div>
     </div>
-    <form>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+
         <div class="fifty">
-            <label for="name">Name</label>
-            <input id="name" type="text" data-set="name" readonly>
+            <label>Name</label>
+            {{form.name}}
         </div>
         <div class="quar">
-            <label for="Gen">Gender</label>
-            <input id="Gen" type="text" data-set="Gen" readonly>
+            <label>Gender</label>
+            {{form.gender}}
         </div>
         <div class="quar">
-            <label for="GPA">GPA</label>
-            <input id="GPA" type="text" data-set="GPA" readonly>
+            <label>GPA</label>
+            {{form.gpa}}
         </div>
         <div class="fifty">
-            <label for="ID">ID</label>
-            <input id="ID" type="number" data-set="ID" readonly>
+            <label>ID</label>
+            {{form.id}}
         </div>
         <div class="quar">
-            <label for="level">Level</label>
-            <input id="level" type="number" max="7" min="1" data-set="level" readonly>
+            <label>Level</label>
+            {{form.level}}
         </div>
         <div class="quar">
-            <label for="sta">Status</label>
-            <input id="sta" type="text" data-set="sta" readonly>
+            <label>Status</label>
+            {{form.status}}
         </div>
         <div class="fifty">
-            <label for="date">Date Birth</label>
-            <input id="date" type="text" data-set="date" readonly>
+            <label>Date Birth</label>
+            {{form.DOB}}
         </div>
         <div class="fifty">
-            <label for="email">Email</label>
-            <input id="email" type="email" data-set="email" readonly>
+            <label>Email</label>
+            {{form.email}}
         </div>
         <div class="fifty">
-            <label for="phone">Phone</label>
-            <input id="phone" type="tel" maxlength="11" minlength="11" data-set="phone" readonly>
+            <label>Phone</label>
+            {{form.phone}}
+        </div>
+
+        <div class="butt_container">
+            <button type="submit" formaction="/save" class="butt">Save</button>
+            <button class="butt" type="submit" formaction="/search" id="backBtn">Back</button>
         </div>
     </form>
-    <div class="butts">
-        <div class="butt b1">Save</div>
-        <div class="butt b2" onclick = "backPage()" id="backBtn">Back</div>
-    </div>
-    <!-- This Script redirects to search page --> 
-    <script type="text/javascript">
-        document.getElementById("backBtn").onclick = function () {
-            location.href = "Search_Student.html";
-        };
-    </script>
-    <script defer src="javascript/addDeb.js">
-    </script>
+    
 </body>
 
 </html>
