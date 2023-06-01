@@ -12,4 +12,6 @@ urlpatterns = [
     path('search', search.search, name='search'),
     path('search-query', search.searchQuery, name='searchQuery'),
     path('search-delete', search.delete, name='delete'),
+    path('all_students.html/',main.all, name='all'),
+    path('all_students.html/post_request',main.post_request, name='post_request'),
 ]
