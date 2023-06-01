@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from Main.models import Student
 from django import forms
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 
 # username: abdo
@@ -11,24 +14,32 @@ from django import forms
 def search(request):
     return render(request, "search/search_student.html")
 
-
+@csrf_exempt
 def searchQuery(request):
      
-    query = request.GET.get('name')
-    method = request.GET.get('Search_by')
-    if method == 'Name':
+    query = request.GET.get('query')
+    method = request.GET.get('method')
+    print("query is: ", query)
+    print("method is: ", method)
+    if method == 'name':
+        print ("priiiiiiiiiiiiiiiiiiiiiiiiintinggggggggg")
         students = Student.objects.filter(name__icontains=query , status = 'Active').values()
-        return render(request, "search/search_student.html", {'students': students})
-    
-    elif method == 'Department':
+        return JsonResponse(list(students), safe=False)
+        # return students
+
+    elif method == 'department':
         students = Student.objects.filter(department__icontains=query , status = 'Active').values()
-        return render(request, "search/search_student.html", {'students': students})
+        return JsonResponse(list(students), safe=False)        # return students
 
-
+@csrf_exempt
 def delete(request):
     #i think it should be a DELETE request
-    idToDelete = request.POST.get('selected_student')
-    
+    data = json.loads(request.body)
+    idToDelete = data['id']
+    print("id to delete is: ", idToDelete)
+    print("hellllllllllllllllllllllllllllllllllo")
+    # data = json.loads(request.body)
+    # idToDelete = data['id']
     studentToDelete = Student.objects.get(id=idToDelete)
     studentToDelete.delete()
-    return render(request, "search/search_student.html")
+    return HttpResponse("Deleted Successfully")

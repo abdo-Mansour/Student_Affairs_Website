@@ -3,145 +3,136 @@ let max_elements = 1;
 
 function insert(obj)
 {
+    console.log("inserting");
     let table = document.getElementById('table');
-        let table_row = table.insertRow(-1);
+    // delete all the elements in the table
+    
+    let table_row = table.insertRow(-1);
 
-        let label_1 = document.createElement('label');
-        let Name = table_row.insertCell(0);
-        let node_1 = document.createTextNode(obj.name);
-        label_1.appendChild(node_1);
-        Name.appendChild(label_1);
+    let label_1 = document.createElement('label');
+    let Name = table_row.insertCell(0);
+    let node_1 = document.createTextNode(obj.name);
+    label_1.appendChild(node_1);
+    Name.appendChild(label_1);
 
-        let label_2 = document.createElement('label');
-        let ID = table_row.insertCell(1);
-        let node_2 = document.createTextNode(obj.id);
-        label_2.appendChild(node_2);
-        ID.appendChild(label_2);
+    let label_2 = document.createElement('label');
+    let ID = table_row.insertCell(1);
+    let node_2 = document.createTextNode(obj.id);
+    label_2.appendChild(node_2);
+    ID.appendChild(label_2);
 
-        let label_3 = document.createElement('label');
-        let Status = table_row.insertCell(2);
-        let circle = document.createElement('span');
-        circle.setAttribute('class','material-icons');
-        circle.setAttribute('style','color: #12F10D; font-size:10px');
-        circle.setAttribute('class','material-icons');
-        circle.innerHTML = 'circle';
-        label_3.appendChild(circle);
-        let node_3 = document.createTextNode('Active');
-        label_3.appendChild(node_3);
-        Status.appendChild(label_3);
+    let label_3 = document.createElement('label');
+    let Status = table_row.insertCell(2);
+    let circle = document.createElement('span');
+    circle.setAttribute('class','material-icons');
+    circle.setAttribute('style','color: #12F10D; font-size:10px');
+    circle.setAttribute('class','material-icons');
+    circle.innerHTML = 'circle';
+    label_3.appendChild(circle);
+    let node_3 = document.createTextNode('Active');
+    label_3.appendChild(node_3);
+    Status.appendChild(label_3);
 
 
-        let Select = table_row.insertCell(3);
-        Select.setAttribute('class','input');
-        let input = document.createElement('input');
-        input.setAttribute('id',obj.id);
-        input.setAttribute('value',obj.id);
-        input.setAttribute('type','radio');
-        input.setAttribute('name','selected_student');
-        input.setAttribute('class','Select');
-        Select.appendChild(input);
+    let Select = table_row.insertCell(3);
+    Select.setAttribute('class','input');
+    let input = document.createElement('input');
+    input.setAttribute('id',obj.id);
+    input.setAttribute('value',obj.id);
+    input.setAttribute('type','radio');
+    input.setAttribute('name','selected_student');
+    input.setAttribute('class','Select');
+    Select.appendChild(input);
+    elements_in_table++;
 }
 
 
 
 function search(){
-    console.log("searching");
-
     
-    // let body = document.getElementsByTagName('tr');
-    // for (let index = 0; index < body.length;) {
-    //     if (body[index].getAttribute('class') != 'head') {
-    //         body[index].remove();
-    //         body.length -=1;
-    //     }
-    //     else
-    //     {
-    //         index++;
-    //     }
-    // }
-    // elements_in_table = 1;
 
-    // if(document.getElementById('Name').checked){
-    //     let person = JSON.parse(localStorage.getItem(document.getElementById('Searched_element').value));
-    //     if(person != null && (person.status == 'Active' || person.status == 'active'))
-    //     {
-    //         insert(person);
-    //     }
-    // }
-    // else
-    // {
-    //     for (let i = 0; i < localStorage.length; i++) {
-    //         const key = localStorage.key(i);
-    //         const value = localStorage.getItem(key);
-    //         const ObjValue = JSON.parse(value);
-    //         if(ObjValue.department == document.getElementById('Searched_element').value && (ObjValue.status == 'Active' || ObjValue.status == 'active' ))
-    //         {
-    //             insert(ObjValue);
-    //         }
-    //         elements_in_table++;
-    //     }
-    //     max_elements = elements_in_table;
-    // }
+    console.log("searching");
+    let query = document.getElementById('Searched_element').value;
+    let method;
+    if (document.getElementById('Name').checked) {
+        method = 'name';
+    } else if (document.getElementById('Department').checked) {
+        method = 'department';
+    }
+    let url = "/search/search-query?query=" + encodeURIComponent(query) + "&method=" + encodeURIComponent(method);
+
+    // Ajax Request
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Request successful, do something with the response
+            let response = JSON.parse(xhr.responseText);
+            console.log(response);
+            let tableRows = document.getElementsByTagName('tr');
+            for (let index = 0; index < tableRows.length;) {
+                if (tableRows[index].getAttribute('class') != 'head') {
+                    tableRows[index].remove();
+                    tableRows.length -=1;
+                }
+                else
+                {
+                    index++;
+                }
+            }
+            for(let i = 0; i < response.length; i++)
+            {
+                insert(response[i]);
+            }
+
+        }
+    };
+    console.log("sending request: " + url);
+    xhr.send();
+    
+    
     
 }
 
+function getCSRFToken() {
+    var csrfTokenElement = document.querySelector('[name="csrfmiddlewaretoken"]');
+    if (csrfTokenElement) {
+        return csrfTokenElement.value;
+    }
+    return null;
+}
 
-function Delete()
+function deleteStudent()
 {
+    console.log("delete clicked");
     let allSelect = document.getElementsByClassName('Select');
     for(let i = 0; i < allSelect.length; i++)
     {
         if(allSelect[i].checked)
         {
             // localStorage.removeItem(allSelect[i].parentNode.parentNode.firstChild.firstChild.innerHTML);
+            var jsonData = JSON.stringify({id: allSelect[i].value});
+            // Ajax Request
+            console.log(jsonData);
+            console.log("delete clicked");
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/search-delete");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                // Request successful, do something with the response
+                    console.log(this.responseText);
+                }
+            };
+            console.log("sending request" + jsonData)
+            xhr.send(jsonData);
             allSelect[i].parentNode.parentNode.remove();
             //TODO: remove from the database
             break;
         }
     }
-    // for (let index = 1; index <= max_elements; index++) {
-    //     if(elements_in_table == 0)
-    //     {
-    //         max_elements = elements_in_table;
-    //         break;
-    //     }
-    //     if (document.getElementById(index.toString()) != null){
-    //         if(document.getElementById(index.toString()).checked)
-    //         {
-    //             let Selected = document.getElementById(index.toString());
-    //             // localStorage.removeItem(Selected.parentNode.parentNode.firstChild.firstChild.innerHTML);
-                
-    //             Selected.parentNode.parentNode.remove();
-    //             break;
-    //         } 
-    //     }
-    // }
-}
 
-function Send_obj()
-{
-    let check = document.getElementsByClassName('input');
-    console.log("sending the object")
-    for (let index = 0; index < check.length; index++) {
-        console.log("index: " + index);
-        if (check[index].firstChild.checked) {
-            console.log("checked: " + check[index].parentNode.firstChild.firstChild.innerHTML);
-            localStorage.setItem("Selected_Student",localStorage.getItem(check[index].parentNode.firstChild.firstChild.innerHTML));
-            break;
-        }
-    }
-}
 
-document.getElementById("edit_button_search").onclick = function () {
-    location.href = "Edit_Student.html";
-    Send_obj();
-};
-document.getElementById("edit_dept_search").onclick = function () {
-    location.href = "add_department.html";
-    Send_obj();
-};
-document.getElementById("view_student_search").onclick = function () {
-    location.href = "view_student.html";
-    Send_obj();
-};
+
+   
+}
 
