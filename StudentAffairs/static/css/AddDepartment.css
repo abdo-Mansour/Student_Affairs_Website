@@ -11,12 +11,10 @@
     border-radius: 10px;
 }
 .department {
-    margin: auto;
-    margin-bottom: 50px;
     padding: 2%;
     border: 4px solid #8E939A;
     width: fit-content;
- 
+    margin: 30px auto;
     display: flex;
     justify-content: center;
     border-radius: 14px;
@@ -66,11 +64,10 @@ header>ul a {
 }
 
 form {
-    
+    display: flex;
     flex-wrap: wrap;
     padding: 50px 0px;
     width: 90%;
-    height: 90%;
     margin: auto;
     flex-grow: 1;
 }
@@ -110,14 +107,12 @@ button:hover{
     color: #284160;
     border: 1px solid #284160;
     border-radius: 10px;
-    margin: auto;
-   
+    margin-top: 100px;
     cursor: pointer;
 }
 
 .butt_container{
     margin: auto;
-    width: 350px;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -161,14 +156,5 @@ h1,h3,h2{
     /* center */
     margin-left:auto ;
     margin-right:auto ;
-}
-
-select {
-    background: white;
-    border-radius: 30px;
-    padding: 4px;
-    cursor: pointer;
-    width: 100px;
-    
 
 }
