@@ -73,4 +73,6 @@ function updateData() {
   };
 
   xhr.send(jsonData);
+  alert("Data Updated Successfully!");
+
 }

@@ -28,6 +28,10 @@ function updateDep() {
     };
   
     xhr.send();
+
+    if(confirm("Department Updated Successfully!")){
+        back();
+    }
 }
 
 function back(){
