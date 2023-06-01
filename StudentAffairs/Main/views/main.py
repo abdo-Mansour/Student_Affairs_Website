@@ -3,7 +3,7 @@ from Main.models import Student
 from django import forms
 from django.template import loader
 from django.http import HttpResponse
-
+import json
 
 genderChoices = [
     ('Male', 'Male'),
@@ -129,16 +129,17 @@ def formSubmission(request):
     return render(request, 'add-student', {'form': form})
 
 def all(request):
-    
     Students = Student.objects.all().values()
-    # template = loader.get_template('allStudents/all_students.html')
     context = {
         'Students':Students
     }
-    print(Students)
     return render(request, 'allStudents/all_students.html', context)
-    # return HttpResponse(template.render(context,request))
+    
     
 def post_request(request):
-    print(request.POST)
+    data = json.loads(request.body)
+    for id, status in data.items():
+        student = Student.objects.get(id=id)
+        student.status = status
+        student.save()
     return HttpResponse("Request Successful")

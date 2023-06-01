@@ -2,63 +2,6 @@
 const table = document.querySelector("table");
 let updatedStatus = {};
 
-// for (let i = 0; i < localStorage.length; i++) {
-//   const key = localStorage.key(i);
-//   if (key === "Selected_Student") {
-//     continue;
-//   }
-//   const student = localStorage.getItem(key);
-
-//   //get data from local storage
-//   let studentObj = JSON.parse(student);
-//   let studentName = studentObj.Name;
-//   let studentID = studentObj.ID;
-//   let studentStatus = studentObj.status;
-//   currentStatus[key] = studentStatus;
-
-//   //create new row
-//   const newRow = table.insertRow();
-//   //create cells
-//   const nameCell = newRow.insertCell();
-//   const idCell = newRow.insertCell();
-//   const statusCell = newRow.insertCell();
-//   //create text nodes
-//   const nameText = document.createTextNode(studentName);
-//   const idText = document.createTextNode(studentID);
-//   //create select element
-//   const statusSelect = document.createElement("select");
-//   statusSelect.className = "selectStat";
-//   //create circle element
-//   const circle = document.createElement("div");
-//   circle.className = "circleStat";
-//   //create main div
-//   const statDiv = document.createElement("div");
-//   statDiv.className = "StatDiv";
-//   statDiv.appendChild(circle);
-//   statDiv.appendChild(statusSelect);
-//   //create options
-//   const options = ["Active", "Inactive"];
-//   options.forEach((option) => {
-//     const optionElement = document.createElement("option");
-//     optionElement.value = option;
-//     optionElement.textContent = option;
-//     statusSelect.appendChild(optionElement);
-//   });
-
-//   if (studentStatus === "Active") {
-//     statusSelect.value = "Active";
-//   } else if (studentStatus === "Inactive") {
-//     statusSelect.value = "Inactive";
-//   }
-
-//   //add text to cells
-//   nameCell.appendChild(nameText);
-//   idCell.appendChild(idText);
-//   statusCell.appendChild(statDiv);
-//   //add id to select element
-//   statusSelect.id = studentName;
-// }
-
 //get all drop down elements
 const statDivs = document.querySelectorAll(".StatDiv");
 
@@ -94,34 +37,33 @@ function statusChanged(ID) {
   }
 }
 
-// //save changes to local storage
-
-// function updateData() {
-//   console.log("data has been updated");
-//   for (let i = 0; i < localStorage.length; i++) {
-//     //console.log(i);
-
-//     const key = localStorage.key(i);
-//     if (key === "Selected_Student") {
-//       continue;
-//     }
-//     const student = localStorage.getItem(key);
-//     let studentObj = JSON.parse(student);
-//     console.log("key: " + key);
-//     console.log("studentObj: " + currentStatus[key]);
-//     studentObj.status = currentStatus[key];
-//     localStorage.removeItem(key);
-//     localStorage.setItem(key, JSON.stringify(studentObj));
-//   }
-//   alert("Data has been updated!");
-// }
+function getCSRFToken() {
+  var csrfTokenElement = document.querySelector('[name="csrfmiddlewaretoken"]');
+  if (csrfTokenElement) {
+    return csrfTokenElement.value;
+  }
+  return null;
+}
 
 function updateData() {
+  var selects = document.querySelectorAll("select");
+
+  // Create an empty object
+  var data = {};
+
+  // Iterate over the select elements and store their values in the object
+  selects.forEach(function (select) {
+    var id = select.id;
+    var status = select.value;
+    data[id] = status;
+  });
+  var jsonData = JSON.stringify(data);
   // Ajax Request
   console.log("updateBtn clicked");
   var xhr = new XMLHttpRequest();
-  var csrftoken = "{{ csrf_token }}";
+  var csrftoken = getCSRFToken(); // Call the function to get the CSRF token
   xhr.open("POST", "post_request");
+  xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("X-CSRFToken", csrftoken); // Include CSRF token
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -129,9 +71,6 @@ function updateData() {
       console.log(this.responseText);
     }
   };
-  const formdata = new FormData();
-  formdata.append("name", "Axe");
-  formdata.append("age", "15");
 
-  xhr.send(formdata);
+  xhr.send(jsonData);
 }
